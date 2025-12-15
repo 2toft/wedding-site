@@ -1,0 +1,44 @@
+@use "variables" as *;
+
+button,
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: $color-dark-green;
+  color: $color-white;
+  border: none;
+  border-radius: 4px;
+  font-family: $font-family-body;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover:not(:disabled) {
+    background-color: $color-primary-green;
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    background-color: $color-soft-gray;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  &.btn-secondary {
+    background-color: transparent;
+    border: 1px solid $color-dark-green;
+    color: $color-dark-green;
+
+    &:hover:not(:disabled) {
+      background-color: $color-dark-green;
+      color: $color-white;
+    }
+  }
+
+  &.btn-full {
+    width: 100%;
+  }
+}

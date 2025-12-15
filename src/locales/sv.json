@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "home": "Hem",
+    "info": "Bröllopsinfo",
+    "directions": "Hitta hit",
+    "rsvp": "OSA",
+    "contact": "Kontakt"
+  },
+  "footer": {
+    "copyright": "© 2026 Johan & Micaéla. Vi längtar efter att få fira med er!"
+  },
+  "home": {
+    "date": "19 September 2026",
+    "welcome": "Vi bjuder in er att fira vår speciella dag med oss.",
+    "rsvpBtn": "OSA",
+    "detailsBtn": "Bröllopsdetaljer"
+  },
+  "info": {
+    "title": "Bröllopsinformation",
+    "ceremony": {
+      "title": "Vigseln",
+      "location": "Högby kyrka",
+      "desc": "Var med oss under en vacker ceremoni där vi utbyter våra löften."
+    },
+    "reception": {
+      "title": "Festen",
+      "location": "Norrbyladan",
+      "desc": "Middag, dryck och dans följer direkt efter ceremonin."
+    },
+    "timeline": {
+      "title": "Schema",
+      "ceremony": "Vigsel",
+      "photos": "Foton & Mingel",
+      "dinner": "Middag",
+      "party": "Fest"
+    }
+  },
+  "directions": {
+    "title": "Hitta hit",
+    "intro": "Vi ser fram emot att träffa er! Här är vägbeskrivningen.",
+    "ceremony": "Vigsel",
+    "reception": "Fest",
+    "openMaps": "Öppna i Kartor"
+  },
+  "rsvp": {
+    "title": "OSA",
+    "intro": "Vänligen meddela om ni kan komma senast 1 juni 2026.",
+    "name": "Fullständigt namn",
+    "email": "E-postadress",
+    "attending": "Kommer ni?",
+    "yes": "Ja, gärna",
+    "no": "Nej, tyvärr",
+    "guests": "Antal gäster",
+    "dietary": "Allergier / Specialkost",
+    "dietaryPlaceholder": "Några allergier eller speciella önskemål?",
+    "message": "Meddelande till brudparet (Valfritt)",
+    "messagePlaceholder": "Skriv en hälsning...",
+    "submit": "Skicka OSA",
+    "sending": "Skickar...",
+    "successTitle": "Tack!",
+    "successMsg": "Ditt svar har skickats.",
+    "sendAnother": "Skicka ett till",
+    "error": "Något gick fel. Försök igen."
+  },
+  "contact": {
+    "title": "Kontakta oss",
+    "intro": "Har ni frågor? Skicka ett meddelande.",
+    "name": "Namn",
+    "email": "E-post",
+    "message": "Meddelande",
+    "submit": "Skicka meddelande",
+    "sending": "Skickar...",
+    "successTitle": "Meddelande skickat",
+    "successMsg": "Vi återkommer så snart som möjligt."
+  }
+}

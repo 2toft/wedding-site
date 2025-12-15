@@ -1,0 +1,76 @@
+{
+  "nav": {
+    "home": "Home",
+    "info": "Wedding Info",
+    "directions": "Directions",
+    "rsvp": "RSVP",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "© 2026 Johan & Micaéla. Can't wait to celebrate with you!"
+  },
+  "home": {
+    "date": "September 19, 2026",
+    "welcome": "We invite you to celebrate our special day with us.",
+    "rsvpBtn": "RSVP",
+    "detailsBtn": "Wedding Details"
+  },
+  "info": {
+    "title": "Wedding Information",
+    "ceremony": {
+      "title": "The Ceremony",
+      "location": "Högby Church",
+      "desc": "Join us for a beautiful ceremony to exchange our vows."
+    },
+    "reception": {
+      "title": "The Reception",
+      "location": "Norrbyladan",
+      "desc": "Dinner, drinks, and dancing to follow immediately after the ceremony."
+    },
+    "timeline": {
+      "title": "Schedule",
+      "ceremony": "Ceremony",
+      "photos": "Photos & Cocktails",
+      "dinner": "Dinner",
+      "party": "Party"
+    }
+  },
+  "directions": {
+    "title": "Directions",
+    "intro": "We can't wait to see you! Here is how to find us.",
+    "ceremony": "Ceremony",
+    "reception": "Reception",
+    "openMaps": "Open in Maps"
+  },
+  "rsvp": {
+    "title": "RSVP",
+    "intro": "Please let us know if you can make it by June 1st, 2026.",
+    "name": "Full Name",
+    "email": "Email Address",
+    "attending": "Will you be attending?",
+    "yes": "Yes, happily",
+    "no": "No, regretfully",
+    "guests": "Number of Guests",
+    "dietary": "Dietary Restrictions / Allergies",
+    "dietaryPlaceholder": "Any allergies or special requirements?",
+    "message": "Message to the Couple (Optional)",
+    "messagePlaceholder": "Leave a note...",
+    "submit": "Send RSVP",
+    "sending": "Sending...",
+    "successTitle": "Thank you!",
+    "successMsg": "Your RSVP has been sent successfully.",
+    "sendAnother": "Send another",
+    "error": "Something went wrong. Please try again."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "intro": "Have questions? Send us a message.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "successTitle": "Message Sent",
+    "successMsg": "We'll get back to you as soon as possible."
+  }
+}
