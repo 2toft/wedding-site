@@ -4,10 +4,11 @@
     "info": "Bröllopsinfo",
     "directions": "Hitta hit",
     "rsvp": "OSA",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "external": "Presentlista"
   },
   "footer": {
-    "copyright": "© 2026 Johan & Micaéla. Vi längtar efter att få fira med er!"
+    "copyright": "© 2026 {coupleNames}. "
   },
   "home": {
     "date": "19 September 2026",
@@ -19,11 +20,13 @@
     "title": "Bröllopsinformation",
     "ceremony": {
       "title": "Vigseln",
+      "time": "14:00",
       "location": "Högby kyrka",
       "desc": "Var med oss under en vacker ceremoni där vi utbyter våra löften."
     },
     "reception": {
-      "title": "Festen",
+      "title": "Mottagningen",
+      "time": "16:00",
       "location": "Norrbyladan",
       "desc": "Middag, dryck och dans följer direkt efter ceremonin."
     },
@@ -37,20 +40,33 @@
   },
   "directions": {
     "title": "Hitta hit",
-    "intro": "Vi ser fram emot att träffa er! Här är vägbeskrivningen.",
+    "intro": "För er som inte är bekanta med området, här är hur ni hittar till oss. Vi löser skjuts mellan kyrka och mottagning.",
     "ceremony": "Vigsel",
-    "reception": "Fest",
-    "openMaps": "Öppna i Kartor"
+    "reception": "Mottagning",
+    "hotel": "Hotell",
+    "hotelName": "Starby Hotell",
+    "openMaps": "Öppna karta"
   },
   "rsvp": {
     "title": "OSA",
-    "intro": "Vänligen meddela om ni kan komma senast 1 juni 2026.",
+    "intro": "Vänligen meddela om ni kan komma senast 30 juni 2026.",
     "name": "Fullständigt namn",
     "email": "E-postadress",
-    "attending": "Kommer ni?",
+    "email_placeholder": "din@email.se",
+    "attending": "Kommer du?",
     "yes": "Ja, gärna",
     "no": "Nej, tyvärr",
     "guests": "Antal gäster",
+    "guestDetailsTitle": "Gästinformation",
+    "guestCardTitle": "Gäst {number}",
+    "guestName": "Gästens namn",
+    "guestNamePlaceholder": "Ange gästens namn",
+    "guestInfo": "Kostinfo / Allergier",
+    "guestInfoPlaceholder": "Några kostbehov eller allergier för den här gästen?",
+    "guestDrink": "Dryckesval",
+    "guestDrinkPlaceholder": "Välj dryckesval",
+    "alcohol": "Alkohol",
+    "nonAlcohol": "Alkoholfritt",
     "dietary": "Allergier / Specialkost",
     "dietaryPlaceholder": "Några allergier eller speciella önskemål?",
     "message": "Meddelande till brudparet (Valfritt)",
@@ -64,13 +80,13 @@
   },
   "contact": {
     "title": "Kontakta oss",
-    "intro": "Har ni frågor? Skicka ett meddelande.",
-    "name": "Namn",
-    "email": "E-post",
-    "message": "Meddelande",
-    "submit": "Skicka meddelande",
-    "sending": "Skickar...",
-    "successTitle": "Meddelande skickat",
-    "successMsg": "Vi återkommer så snart som möjligt."
+    "intro": "Om ni har frågor, ring gärna någon av oss.",
+    "phone": "Telefon",
+    "coupleTitle": "Brudpar",
+    "toastmastersTitle": "Toastmasters",
+    "groom": "Johan",
+    "bride": "Micaela",
+    "toastmasterCalle": "Calle",
+    "toastmasterSimon": "Simon"
   }
 }

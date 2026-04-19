@@ -4,10 +4,11 @@
     "info": "Wedding Info",
     "directions": "Directions",
     "rsvp": "RSVP",
-    "contact": "Contact"
+    "contact": "Contact",
+    "external": "Registry"
   },
   "footer": {
-    "copyright": "© 2026 Johan & Micaéla. Can't wait to celebrate with you!"
+    "copyright": "© 2026 {coupleNames}. Can't wait to celebrate with you!"
   },
   "home": {
     "date": "September 19, 2026",
@@ -19,11 +20,13 @@
     "title": "Wedding Information",
     "ceremony": {
       "title": "The Ceremony",
+      "time": "02:00 PM",
       "location": "Högby Church",
       "desc": "Join us for a beautiful ceremony to exchange our vows."
     },
     "reception": {
       "title": "The Reception",
+      "time": "04:00 PM",
       "location": "Norrbyladan",
       "desc": "Dinner, drinks, and dancing to follow immediately after the ceremony."
     },
@@ -37,20 +40,33 @@
   },
   "directions": {
     "title": "Directions",
-    "intro": "We can't wait to see you! Here is how to find us.",
+    "intro": "For those unfamiliar with the area, here is how to find us. We will arrange transportation between the church and the reception.",
     "ceremony": "Ceremony",
     "reception": "Reception",
-    "openMaps": "Open in Maps"
+    "hotel": "Hotel",
+    "hotelName": "Starby Hotel",
+    "openMaps": "Open map"
   },
   "rsvp": {
     "title": "RSVP",
-    "intro": "Please let us know if you can make it by June 1st, 2026.",
+    "intro": "Please let us know if you can make it by June 30th, 2026.",
     "name": "Full Name",
     "email": "Email Address",
+    "email_placeholder": "your@email.com",
     "attending": "Will you be attending?",
     "yes": "Yes, happily",
     "no": "No, regretfully",
     "guests": "Number of Guests",
+    "guestDetailsTitle": "Guest Information",
+    "guestCardTitle": "Guest {number}",
+    "guestName": "Guest Name",
+    "guestNamePlaceholder": "Enter guest name",
+    "guestInfo": "Dietary Notes / Allergies",
+    "guestInfoPlaceholder": "Any dietary needs or allergies for this guest?",
+    "guestDrink": "Drink Preference",
+    "guestDrinkPlaceholder": "Select drink preference",
+    "alcohol": "Alcohol",
+    "nonAlcohol": "Non-alcohol",
     "dietary": "Dietary Restrictions / Allergies",
     "dietaryPlaceholder": "Any allergies or special requirements?",
     "message": "Message to the Couple (Optional)",
@@ -64,13 +80,13 @@
   },
   "contact": {
     "title": "Contact Us",
-    "intro": "Have questions? Send us a message.",
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "submit": "Send Message",
-    "sending": "Sending...",
-    "successTitle": "Message Sent",
-    "successMsg": "We'll get back to you as soon as possible."
+    "intro": "If you have questions, please call one of us.",
+    "phone": "Phone",
+    "coupleTitle": "Bride & Groom",
+    "toastmastersTitle": "Toastmasters",
+    "groom": "Johan",
+    "bride": "Micaela",
+    "toastmasterCalle": "Calle",
+    "toastmasterSimon": "Simon"
   }
 }
