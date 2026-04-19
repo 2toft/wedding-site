@@ -3,119 +3,126 @@
     <h2>{{ $t("contact.title") }}</h2>
     <p class="intro">{{ $t("contact.intro") }}</p>
 
-    <form
-      @submit.prevent="submitContact"
-      class="contact-form"
-      v-if="!submitted"
-    >
-      <div class="form-group">
-        <label for="name">{{ $t("contact.name") }}</label>
-        <input type="text" id="name" v-model="form.name" required />
+    <div class="contact-groups">
+      <div
+        v-for="group in contactGroups"
+        :key="group.titleKey"
+        class="contact-group"
+      >
+        <h3>{{ $t(group.titleKey) }}</h3>
+
+        <div class="contact-list">
+          <div
+            v-for="person in group.people"
+            :key="person.nameKey"
+            class="contact-item"
+          >
+            <p class="person-name">{{ $t(person.nameKey) }}</p>
+            <a :href="`tel:${person.phoneHref}`" class="phone-link">
+              {{ $t("contact.phone") }}: {{ person.phoneDisplay }}
+            </a>
+          </div>
+        </div>
       </div>
-
-      <div class="form-group">
-        <label for="email">{{ $t("contact.email") }}</label>
-        <input type="email" id="email" v-model="form.email" required />
-      </div>
-
-      <div class="form-group">
-        <label for="message">{{ $t("contact.message") }}</label>
-        <textarea
-          id="message"
-          v-model="form.message"
-          rows="5"
-          required
-        ></textarea>
-      </div>
-
-      <!-- Honeypot field for spam protection -->
-      <div style="display: none">
-        <label for="honeypot">Do not fill this out</label>
-        <input type="text" id="honeypot" v-model="form.honeypot" />
-      </div>
-
-      <button type="submit" class="btn" :disabled="loading">
-        {{ loading ? $t("contact.sending") : $t("contact.submit") }}
-      </button>
-    </form>
-
-    <div v-else class="success-message">
-      <h3>{{ $t("contact.successTitle") }}</h3>
-      <p>{{ $t("contact.successMsg") }}</p>
     </div>
   </div>
 </template>
 
 <script setup>
-import { reactive, ref } from "vue";
-
-const form = reactive({
-  name: "",
-  email: "",
-  message: "",
-  honeypot: "",
-});
-
-const loading = ref(false);
-const submitted = ref(false);
-
-const submitContact = async () => {
-  if (form.honeypot) return; // Spam check
-
-  loading.value = true;
-
-  // Simulate API call
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-
-  console.log("Contact form submitted:", form);
-  submitted.value = true;
-  loading.value = false;
-};
+const contactGroups = [
+  {
+    titleKey: "contact.coupleTitle",
+    people: [
+      {
+        nameKey: "contact.groom",
+        phoneDisplay: "+46 70 123 45 67",
+        phoneHref: "+46701234567",
+      },
+      {
+        nameKey: "contact.bride",
+        phoneDisplay: "+46 70 987 65 43",
+        phoneHref: "+46709876543",
+      },
+    ],
+  },
+  {
+    titleKey: "contact.toastmastersTitle",
+    people: [
+      {
+        nameKey: "contact.toastmasterCalle",
+        phoneDisplay: "+46 70 111 22 33",
+        phoneHref: "+46701112233",
+      },
+      {
+        nameKey: "contact.toastmasterSimon",
+        phoneDisplay: "+46 70 444 55 66",
+        phoneHref: "+46704445566",
+      },
+    ],
+  },
+];
 </script>
 
 <style lang="scss" scoped>
 @use "../styles/variables" as *;
 
 .contact {
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto;
   text-align: center;
 }
 
 .intro {
-  margin-bottom: $spacing-lg;
+  margin: 0 auto $spacing-lg;
 }
 
-.contact-form {
-  text-align: left;
+.contact-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $spacing-md;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-group {
   background: $color-white;
   padding: $spacing-lg;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: left;
+
+  h3 {
+    margin-bottom: $spacing-md;
+    text-align: center;
+  }
 }
 
-.form-group {
-  margin-bottom: $spacing-md;
+.contact-list {
+  display: grid;
+  gap: $spacing-sm;
+}
 
-  label {
-    display: block;
-    margin-bottom: $spacing-xs;
-    font-weight: 500;
-  }
+.contact-item {
+  border: 1px solid $color-soft-gray;
+  border-radius: 6px;
+  padding: $spacing-sm;
+}
 
-  input,
-  textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid $color-soft-gray;
-    border-radius: 4px;
-    font-family: $font-family-body;
-    font-size: 1rem;
+.person-name {
+  margin: 0 0 $spacing-xs;
+  font-weight: 500;
+}
 
-    &:focus {
-      outline: none;
-      border-color: $color-primary-green;
-    }
+.phone-link {
+  font-size: $font-size-md;
+  font-weight: 500;
+  color: $color-text-heading;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary-green;
   }
 }
 </style>

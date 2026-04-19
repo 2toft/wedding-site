@@ -1,7 +1,41 @@
 <template>
   <div class="directions container section">
     <h2>{{ $t("directions.title") }}</h2>
-    <p class="intro">{{ $t("directions.intro") }}</p>
+    <p class="intro text-body">{{ $t("directions.intro") }}</p>
+
+    <div class="locations">
+      <div class="location-item">
+        <h3>{{ $t("directions.hotel") }}</h3>
+        <p class="text-body">{{ $t("directions.hotelName") }}</p>
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Sk%C3%A4nninge+Stadshotell"
+          target="_blank"
+          class="btn btn-secondary"
+          >{{ $t("directions.openMaps") }}</a
+        >
+      </div>
+      <div class="location-item">
+        <h3>{{ $t("directions.ceremony") }}</h3>
+        <p class="text-body">{{ $t("info.ceremony.location") }}</p>
+        <a
+          href="https://maps.app.goo.gl/KrRtcT5sZNtbjoC29"
+          target="_blank"
+          class="btn btn-secondary"
+          >{{ $t("directions.openMaps") }}</a
+        >
+      </div>
+
+      <div class="location-item">
+        <h3>{{ $t("directions.reception") }}</h3>
+        <p class="text-body">{{ $t("info.reception.location") }}</p>
+        <a
+          href="https://maps.app.goo.gl/LHtAo3ofhG6CF1G97"
+          target="_blank"
+          class="btn btn-secondary"
+          >{{ $t("directions.openMaps") }}</a
+        >
+      </div>
+    </div>
 
     <div class="map-container">
       <!-- Placeholder for Google Maps Embed -->
@@ -15,49 +49,26 @@
       >
       </iframe>
     </div>
-
-    <div class="locations">
-      <div class="location-item">
-        <h3>{{ $t("directions.ceremony") }}</h3>
-        <p>{{ $t("info.ceremony.location") }}</p>
-        <a
-          href="https://maps.app.goo.gl/KrRtcT5sZNtbjoC29"
-          target="_blank"
-          class="btn btn-secondary"
-          >{{ $t("directions.openMaps") }}</a
-        >
-      </div>
-
-      <div class="location-item">
-        <h3>{{ $t("directions.reception") }}</h3>
-        <p>{{ $t("info.reception.location") }}</p>
-        <a
-          href="https://maps.app.goo.gl/LHtAo3ofhG6CF1G97"
-          target="_blank"
-          class="btn btn-secondary"
-          >{{ $t("directions.openMaps") }}</a
-        >
-      </div>
-    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @use "../styles/variables" as *;
+@use "../styles/typography";
 
 .directions {
   text-align: center;
 }
 
 .intro {
-  margin-bottom: $spacing-lg;
+  margin: 0 auto $spacing-md;
 }
 
 .map-container {
-  margin-bottom: $spacing-lg;
-  border-radius: 8px;
+  margin-top: $spacing-md;
+  border-radius: 2px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
 .locations {
@@ -69,11 +80,12 @@
   .location-item {
     background: $color-white;
     padding: $spacing-md;
-    border-radius: 8px;
+    border-radius: 2px;
     min-width: 250px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 
     h3 {
-      font-size: 1.5rem;
+      margin-bottom: $spacing-xs;
     }
 
     p {

@@ -5,20 +5,20 @@
     <div class="info-grid">
       <div class="info-card">
         <h3>{{ $t("info.ceremony.title") }}</h3>
-        <p class="time">13:00</p>
+        <p class="time text-meta">{{ $t("info.ceremony.time") }}</p>
         <p class="location">{{ $t("info.ceremony.location") }}</p>
         <p class="address">595 94, Högby</p>
-        <p class="description">
+        <p class="description text-body">
           {{ $t("info.ceremony.desc") }}
         </p>
       </div>
 
       <div class="info-card">
         <h3>{{ $t("info.reception.title") }}</h3>
-        <p class="time">15:00</p>
+        <p class="time text-meta">{{ $t("info.reception.time") }}</p>
         <p class="location">{{ $t("info.reception.location") }}</p>
         <p class="address">595 94, Norrby</p>
-        <p class="description">
+        <p class="description text-body">
           {{ $t("info.reception.desc") }}
         </p>
       </div>
@@ -27,10 +27,22 @@
     <div class="timeline">
       <h3>{{ $t("info.timeline.title") }}</h3>
       <ul>
-        <li><strong>13:00</strong> - {{ $t("info.timeline.ceremony") }}</li>
-        <li><strong>14:30</strong> - {{ $t("info.timeline.photos") }}</li>
-        <li><strong>17:00</strong> - {{ $t("info.timeline.dinner") }}</li>
-        <li><strong>20:00</strong> - {{ $t("info.timeline.party") }}</li>
+        <li>
+          <strong class="text-meta">{{ $t("info.ceremony.time") }}</strong> -
+          {{ $t("info.timeline.ceremony") }}
+        </li>
+        <li>
+          <strong class="text-meta">14:30</strong> -
+          {{ $t("info.timeline.photos") }}
+        </li>
+        <li>
+          <strong class="text-meta">17:00</strong> -
+          {{ $t("info.timeline.dinner") }}
+        </li>
+        <li>
+          <strong class="text-meta">20:00</strong> -
+          {{ $t("info.timeline.party") }}
+        </li>
       </ul>
     </div>
   </div>
@@ -59,27 +71,23 @@
 .info-card {
   background-color: $color-white;
   padding: $spacing-lg;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-
-  h3 {
-    color: $color-dark-green;
-  }
+  border-radius: 2px; // Sharper corners for editorial look? Or keep rounded? Prompt says "Rounded letterforms" but "More printed invitation". Usually printed cards are rectangular. I'll reduce radius.
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); // Softer shadow
 
   .time {
-    font-weight: bold;
-    font-size: 1.2rem;
     margin-bottom: $spacing-xs;
   }
 
   .location {
-    font-size: 1.1rem;
+    font-family: $font-family-heading;
+    font-size: $font-size-lg;
     margin-bottom: $spacing-xs;
+    color: $color-text-heading;
   }
 
   .address {
-    color: color.adjust($color-text-main, $lightness: 20%);
-    font-style: italic;
+    font-size: $font-size-sm;
+    color: $color-text-body;
     margin-bottom: $spacing-md;
   }
 }
@@ -99,9 +107,14 @@
       border-bottom: 1px solid $color-soft-gray;
       display: flex;
       justify-content: space-between;
+      align-items: center;
 
       &:last-child {
         border-bottom: none;
+      }
+
+      strong {
+        color: $color-text-meta;
       }
     }
   }

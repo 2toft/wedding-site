@@ -15,8 +15,15 @@ export function useRsvpForm() {
       // Create URLSearchParams object
       const params = new URLSearchParams();
 
+      const guestNames = Array.isArray(formData.guestDetails)
+        ? formData.guestDetails
+            .map((guest) => guest.name?.trim())
+            .filter(Boolean)
+        : [];
+      const submitterName = guestNames[0] || formData.email || "Unknown";
+
       // Map form data to Google Form entry IDs
-      params.append(GOOGLE_FORM_CONFIG.fieldIds.name, formData.name);
+      params.append(GOOGLE_FORM_CONFIG.fieldIds.name, submitterName);
       params.append(GOOGLE_FORM_CONFIG.fieldIds.email, formData.email);
 
       // Handle boolean/radio values
@@ -25,16 +32,32 @@ export function useRsvpForm() {
 
       if (formData.attending) {
         params.append(GOOGLE_FORM_CONFIG.fieldIds.guests, formData.guests);
-        params.append(
-          GOOGLE_FORM_CONFIG.fieldIds.dietary,
-          formData.dietary || ""
-        );
       }
 
-      params.append(
-        GOOGLE_FORM_CONFIG.fieldIds.message,
-        formData.message || ""
-      );
+      let message = formData.message || "";
+      if (formData.attending && Array.isArray(formData.guestDetails)) {
+        const details = formData.guestDetails
+          .map((guest, index) => {
+            const name = guest.name?.trim() || `Guest ${index + 1}`;
+            const info = guest.info?.trim() || "No additional info";
+            const drinkPreferenceLabel =
+              guest.drinkPreference === "alcohol"
+                ? "Alcohol"
+                : guest.drinkPreference === "nonAlcohol"
+                  ? "Non-alcohol"
+                  : "Not specified";
+            return `${name} (${drinkPreferenceLabel}): ${info}`;
+          })
+          .join("\n");
+
+        if (details) {
+          message = message
+            ? `${message}\n\nGuest details:\n${details}`
+            : `Guest details:\n${details}`;
+        }
+      }
+
+      params.append(GOOGLE_FORM_CONFIG.fieldIds.message, message);
 
       // Send request
       // mode: 'no-cors' is required for Google Forms

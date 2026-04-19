@@ -2,20 +2,12 @@
   <div class="rsvp-form-container">
     <form @submit.prevent="handleSubmit" class="rsvp-form" v-if="!success">
       <BaseInput
-        id="name"
-        :label="$t('rsvp.name')"
-        v-model="form.name"
-        required
-        :placeholder="$t('rsvp.name')"
-      />
-
-      <BaseInput
         id="email"
         type="email"
         :label="$t('rsvp.email')"
         v-model="form.email"
         required
-        placeholder="your@email.com"
+        :placeholder="$t('rsvp.email_placeholder')"
       />
 
       <div class="form-group radio-group">
@@ -48,13 +40,53 @@
             max="5"
           />
 
-          <BaseTextarea
-            id="dietary"
-            :label="$t('rsvp.dietary')"
-            v-model="form.dietary"
-            rows="3"
-            :placeholder="$t('rsvp.dietaryPlaceholder')"
-          />
+          <div class="guest-details-section">
+            <h4>{{ $t("rsvp.guestDetailsTitle") }}</h4>
+
+            <div
+              v-for="(guest, index) in form.guestDetails"
+              :key="`guest-${index}`"
+              class="guest-card"
+            >
+              <p class="guest-card-title">
+                {{ $t("rsvp.guestCardTitle", { number: index + 1 }) }}
+              </p>
+
+              <BaseInput
+                :id="`guest-name-${index}`"
+                :label="$t('rsvp.guestName')"
+                v-model="guest.name"
+                :placeholder="$t('rsvp.guestNamePlaceholder')"
+              />
+
+              <BaseTextarea
+                :id="`guest-info-${index}`"
+                :label="$t('rsvp.guestInfo')"
+                v-model="guest.info"
+                rows="2"
+                :placeholder="$t('rsvp.guestInfoPlaceholder')"
+              />
+
+              <div class="form-group">
+                <label :for="`guest-drink-${index}`">{{
+                  $t("rsvp.guestDrink")
+                }}</label>
+                <select
+                  :id="`guest-drink-${index}`"
+                  v-model="guest.drinkPreference"
+                  required
+                >
+                  <option disabled value="">
+                    {{ $t("rsvp.guestDrinkPlaceholder") }}
+                  </option>
+                  <option value="alcohol">{{ $t("rsvp.alcohol") }}</option>
+                  <option value="nonAlcohol">
+                    {{ $t("rsvp.nonAlcohol") }}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
         </div>
       </transition>
 
@@ -89,7 +121,7 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
+import { computed, reactive, watch } from "vue";
 import { useRsvpForm } from "../composables/useRsvpForm";
 import BaseInput from "./BaseInput.vue";
 import BaseTextarea from "./BaseTextarea.vue";
@@ -99,13 +131,43 @@ const { loading, error, success, submitToGoogleForm, resetForm } =
   useRsvpForm();
 
 const form = reactive({
-  name: "",
   email: "",
   attending: null,
   guests: 1,
-  dietary: "",
+  guestDetails: [{ name: "", info: "", drinkPreference: "" }],
   message: "",
 });
+
+const normalizedGuests = computed(() => {
+  const count = Number(form.guests);
+  if (!Number.isFinite(count)) return 1;
+  return Math.min(5, Math.max(1, Math.floor(count)));
+});
+
+watch(
+  normalizedGuests,
+  (count) => {
+    if (form.guestDetails.length > count) {
+      form.guestDetails = form.guestDetails.slice(0, count);
+      return;
+    }
+
+    while (form.guestDetails.length < count) {
+      form.guestDetails.push({ name: "", info: "", drinkPreference: "" });
+    }
+  },
+  { immediate: true },
+);
+
+watch(
+  () => form.attending,
+  (attending) => {
+    if (!attending) {
+      form.guests = 1;
+      form.guestDetails = [{ name: "", info: "", drinkPreference: "" }];
+    }
+  },
+);
 
 const handleSubmit = async () => {
   await submitToGoogleForm(form);
@@ -114,11 +176,10 @@ const handleSubmit = async () => {
 const handleReset = () => {
   resetForm();
   // Reset form data
-  form.name = "";
   form.email = "";
   form.attending = null;
   form.guests = 1;
-  form.dietary = "";
+  form.guestDetails = [{ name: "", info: "", drinkPreference: "" }];
   form.message = "";
 };
 </script>
@@ -131,6 +192,26 @@ const handleReset = () => {
   padding: $spacing-lg;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.guest-details-section {
+  margin-bottom: $spacing-md;
+
+  h4 {
+    margin: $spacing-sm 0 $spacing-md;
+  }
+}
+
+.guest-card {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: $spacing-md;
+  margin-bottom: $spacing-md;
+}
+
+.guest-card-title {
+  font-weight: 600;
+  margin: 0 0 $spacing-sm;
 }
 
 .error-msg {
@@ -151,7 +232,9 @@ const handleReset = () => {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s ease, height 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    height 0.3s ease;
 }
 
 .fade-enter-from,

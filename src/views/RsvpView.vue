@@ -1,7 +1,7 @@
 <template>
   <div class="rsvp container section">
     <h2>{{ $t("rsvp.title") }}</h2>
-    <p class="intro">
+    <p class="intro text-body">
       {{ $t("rsvp.intro") }}
     </p>
 

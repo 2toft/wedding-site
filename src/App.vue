@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import LanguageSwitcher from "./components/LanguageSwitcher.vue";
+import { COUPLE_NAMES, NAV_EXTERNAL_URL } from "./config/site";
 
 const isMenuOpen = ref(false);
 
@@ -18,7 +19,7 @@ const closeMenu = () => {
   <div class="app-container">
     <header class="site-header">
       <div class="container header-content">
-        <router-link to="/" class="logo" @click="closeMenu">J & M</router-link>
+        <router-link to="/" class="logo" @click="closeMenu">M & J</router-link>
 
         <button
           class="mobile-menu-btn"
@@ -44,6 +45,14 @@ const closeMenu = () => {
           <router-link to="/contact" @click="closeMenu">{{
             $t("nav.contact")
           }}</router-link>
+          <a
+            :href="NAV_EXTERNAL_URL"
+            target="_blank"
+            rel="noopener"
+            @click="closeMenu"
+          >
+            {{ $t("nav.external") }}
+          </a>
           <LanguageSwitcher />
         </nav>
       </div>
@@ -59,7 +68,7 @@ const closeMenu = () => {
 
     <footer class="site-footer">
       <div class="container">
-        <p>{{ $t("footer.copyright") }}</p>
+        <p>{{ $t("footer.copyright", { coupleNames: COUPLE_NAMES }) }}</p>
       </div>
     </footer>
   </div>
@@ -90,18 +99,32 @@ const closeMenu = () => {
 
   .logo {
     font-family: $font-family-heading;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: $color-dark-green;
+    font-size: $font-size-xl;
+    font-weight: 400;
+    color: $color-text-heading;
+    text-decoration: none;
   }
 
   nav {
     display: flex;
     gap: $spacing-md;
+    align-items: center;
 
     a {
-      font-weight: 500;
+      font-family: $font-family-body;
+      font-size: $font-size-sm;
+      letter-spacing: $letter-spacing-meta;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: $color-text-body;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
       &.router-link-active {
+        color: $color-primary-green;
+      }
+
+      &:hover {
         color: $color-primary-green;
       }
     }
@@ -181,8 +204,13 @@ main {
   margin-top: auto;
 
   p {
-    margin: 0;
-    font-size: 0.9rem;
+    margin: 0 auto;
+    max-width: none;
+    font-family: $font-family-body;
+    font-size: $font-size-sm;
+    letter-spacing: $letter-spacing-meta;
+    text-transform: uppercase;
+    opacity: 0.8;
   }
 }
 

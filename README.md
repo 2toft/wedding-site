@@ -1,6 +1,8 @@
-# Johan & Micaéla Wedding Website
+# Wedding Website
 
 A modern, elegant wedding website built with Vue 3 + Vite.
+
+Couple names are configured in `src/config/site.js` via `COUPLE_NAMES`.
 
 ## Project Setup
 
@@ -56,7 +58,6 @@ This project is ready to be deployed to any static hosting service.
 The RSVP form submits data to a Google Form. To make this work:
 
 1.  Create a new Google Form with the following fields:
-
     - Full Name (Short answer)
     - Email Address (Short answer)
     - Will you be attending? (Multiple choice: "Yes", "No")
@@ -65,7 +66,6 @@ The RSVP form submits data to a Google Form. To make this work:
     - Message (Paragraph)
 
 2.  Get the "pre-filled link":
-
     - Click the three dots menu -> "Get pre-filled link".
     - Fill in dummy data for all fields.
     - Click "Get link" and copy it.
