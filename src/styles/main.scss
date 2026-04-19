@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "typography";
 @use "buttons";
 @use "forms";
 
@@ -9,55 +10,8 @@
 }
 
 body {
-  font-family: $font-family-body;
   background-color: $color-off-white;
-  color: $color-text-main;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $font-family-heading;
-  font-weight: 400;
-  margin-bottom: $spacing-sm;
-  color: $color-primary-green;
-}
-
-h1 {
-  font-size: 3.5rem;
-  @include mobile {
-    font-size: 2.5rem;
-  }
-}
-
-h2 {
-  font-size: 2.5rem;
-  @include mobile {
-    font-size: 2rem;
-  }
-}
-
-p {
-  margin-bottom: $spacing-sm;
-}
-
-a {
-  color: $color-dark-green;
-  text-decoration: none;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: $color-primary-green;
-  }
-}
-
-// Button styles moved to _buttons.scss
 
 .container {
   max-width: 1200px;

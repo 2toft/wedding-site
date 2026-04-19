@@ -6,8 +6,11 @@
   label {
     display: block;
     margin-bottom: $spacing-xs;
-    font-weight: 500;
-    color: $color-dark-green;
+    font-family: $font-family-body;
+    font-size: $font-size-sm;
+    letter-spacing: $letter-spacing-meta;
+    text-transform: uppercase;
+    color: $color-text-heading;
   }
 
   input[type="text"],
@@ -18,9 +21,9 @@
     width: 100%;
     padding: 12px;
     border: 1px solid $color-soft-gray;
-    border-radius: 4px;
+    border-radius: 2px; // Sharper edges
     font-family: $font-family-body;
-    font-size: 1rem;
+    font-size: $font-size-md;
     background-color: $color-white;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
@@ -37,7 +40,7 @@
 
   .error-text {
     color: #d32f2f;
-    font-size: 0.85rem;
+    font-size: $font-size-sm;
     margin-top: 4px;
   }
 }

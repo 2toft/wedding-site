@@ -1,15 +1,55 @@
+// Lollos colors
+$lollo-dark-green: #0f2a15;
+$lollo-green: #416141;
+$lollo-muted-green: #b8d9bb;
+$lollo-light-green: #eff9f0;
+
 // Colors
-$color-primary-green: #6f7f6a;
-$color-dark-green: #2f4b3a;
-$color-light-green: #c9dccb;
-$color-off-white: #f6f3ed;
+$color-primary-green: $lollo-green;
+$color-dark-green: $lollo-dark-green; // Dark forest green
+$color-charcoal: #363636; // Warm charcoal
+$color-muted-green: $lollo-muted-green; // Muted gray-green
+$color-light-green: $lollo-light-green;
+$color-off-white: $lollo-light-green;
 $color-soft-gray: #d6d2c9;
-$color-text-main: #2f4b3a; // Using dark green for text for softer look than black
+
+// // Colors - COPY
+// $color-primary-green: #6f7f6a;
+// $color-dark-green: #2f4b3a; // Dark forest green
+// $color-charcoal: #363636; // Warm charcoal
+// $color-muted-green: #8da399; // Muted gray-green
+// $color-light-green: #c9dccb;
+// $color-off-white: #f6f3ed;
+// $color-soft-gray: #d6d2c9;
+
+$color-text-heading: $color-dark-green;
+$color-text-body: $color-dark-green;
+$color-text-meta: $color-primary-green;
+
 $color-white: #ffffff;
 
 // Typography
-$font-family-heading: "Playfair Display", serif;
-$font-family-body: "Inter", sans-serif;
+$font-family-heading: "DynamicSchematic", serif;
+$font-family-body: "FuzzyBubbles", sans-serif;
+
+// Font Sizes
+$font-size-base: 18px;
+$font-size-sm: 0.875rem; // ~14px
+$font-size-md: 1rem;
+$font-size-lg: 1.5rem;
+$font-size-xl: 2.5rem;
+$font-size-xxl: 3.5rem;
+$font-size-display: 5rem;
+
+// Line Heights
+$line-height-tight: 1.2;
+$line-height-base: 1.7; // Airy
+$line-height-loose: 1.9;
+
+// Letter Spacing
+$letter-spacing-base: 0;
+$letter-spacing-heading: 0.04em;
+$letter-spacing-meta: 0.1em;
 
 // Spacing
 $spacing-xs: 0.5rem;
