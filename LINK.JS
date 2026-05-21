@@ -1,1 +1,1 @@
-https://docs.google.com/forms/d/e/1FAIpQLSds2FLYNaaJkW_OUHx9RqO0XB410WEVcFfbuRCeNDZAlC7jbA/formResponse?usp=pp_url&entry.1331868431=NAME_TEST&entry.882461547=EMAIL_TEST&entry.1936133947=Yes&entry.1720352075=999&entry.234934707=DIETARY_TEST&entry.684182530=MESSAGE_TEST
+https://docs.google.com/forms/d/e/1FAIpQLSds2FLYNaaJkW_OUHx9RqO0XB410WEVcFfbuRCeNDZAlC7jbA/viewform?usp=pp_url&entry.882461547=natoft.johan@gmail.com&entry.1331868431=Johan+N%C3%A5toft&entry.1936133947=Yes&entry.234934707=None&entry.1831051098=Alcohol&entry.572526692=Yes&entry.684182530=Hi+cuties!

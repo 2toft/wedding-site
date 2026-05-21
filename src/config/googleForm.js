@@ -13,11 +13,12 @@ export const GOOGLE_FORM_CONFIG = {
 
   // Field IDs mapping
   fieldIds: {
-    name: "entry.1331868431",
     email: "entry.882461547",
-    attending: "entry.1936133947", // Should match the options in the form (e.g., "Yes", "No")
-    guests: "entry.1720352075",
+    name: "entry.1331868431",
+    attending: "entry.1936133947",
     dietary: "entry.234934707",
+    alcohol: "entry.1831051098",
+    fridayDinner: "entry.572526692",
     message: "entry.684182530",
   },
 };

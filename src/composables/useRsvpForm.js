@@ -20,44 +20,46 @@ export function useRsvpForm() {
             .map((guest) => guest.name?.trim())
             .filter(Boolean)
         : [];
+      const primaryGuest = Array.isArray(formData.guestDetails)
+        ? formData.guestDetails[0] || {}
+        : {};
       const submitterName = guestNames[0] || formData.email || "Unknown";
 
-      // Map form data to Google Form entry IDs
-      params.append(GOOGLE_FORM_CONFIG.fieldIds.name, submitterName);
-      params.append(GOOGLE_FORM_CONFIG.fieldIds.email, formData.email);
-
-      // Handle boolean/radio values
       const attendingValue = formData.attending ? "Yes" : "No"; // Adjust based on your Google Form options
-      params.append(GOOGLE_FORM_CONFIG.fieldIds.attending, attendingValue);
 
-      if (formData.attending) {
-        params.append(GOOGLE_FORM_CONFIG.fieldIds.guests, formData.guests);
-      }
+      const dietaryValue =
+        (formData.dietary && String(formData.dietary).trim()) ||
+        (primaryGuest.info && String(primaryGuest.info).trim()) ||
+        "None";
 
-      let message = formData.message || "";
-      if (formData.attending && Array.isArray(formData.guestDetails)) {
-        const details = formData.guestDetails
-          .map((guest, index) => {
-            const name = guest.name?.trim() || `Guest ${index + 1}`;
-            const info = guest.info?.trim() || "No additional info";
-            const drinkPreferenceLabel =
-              guest.drinkPreference === "alcohol"
-                ? "Alcohol"
-                : guest.drinkPreference === "nonAlcohol"
-                  ? "Non-alcohol"
-                  : "Not specified";
-            return `${name} (${drinkPreferenceLabel}): ${info}`;
-          })
-          .join("\n");
+      const alcoholValue =
+        primaryGuest.drinkPreference === "alcohol"
+          ? "Alcohol"
+          : primaryGuest.drinkPreference === "nonAlcohol"
+            ? "Non-alcohol"
+            : "Not specified";
 
-        if (details) {
-          message = message
-            ? `${message}\n\nGuest details:\n${details}`
-            : `Guest details:\n${details}`;
-        }
-      }
+      const fridayDinnerValue =
+        formData.attending && formData.dayBeforeDinner !== null
+          ? formData.dayBeforeDinner
+            ? "Yes"
+            : "No"
+          : "Not specified";
 
-      params.append(GOOGLE_FORM_CONFIG.fieldIds.message, message);
+      const submissionByField = {
+        email: formData.email || "",
+        name: submitterName,
+        attending: attendingValue,
+        dietary: dietaryValue,
+        alcohol: alcoholValue,
+        fridayDinner: fridayDinnerValue,
+        message: formData.message || "",
+      };
+
+      // Always use all configured field IDs so config changes are applied consistently.
+      Object.entries(GOOGLE_FORM_CONFIG.fieldIds).forEach(([key, entryId]) => {
+        params.append(entryId, submissionByField[key] ?? "");
+      });
 
       // Send request
       // mode: 'no-cors' is required for Google Forms

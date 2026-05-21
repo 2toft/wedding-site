@@ -12,28 +12,57 @@
   },
   "home": {
     "date": "19 September 2026",
-    "welcome": "Vi bjuder in er att fira vår speciella dag med oss.",
+    "welcome": "",
     "rsvpBtn": "OSA",
-    "detailsBtn": "Bröllopsdetaljer"
+    "detailsBtn": "bröllopsinfo"
   },
   "info": {
-    "title": "Bröllopsinformation",
+    "title": "bröllopsinfo",
+    "segment": {
+      "date": {
+        "kicker": "Datum"
+      },
+      "wedding": {
+        "kicker": "Vigsel",
+        "timeLabel": "Tid",
+        "placeLabel": "Plats"
+      },
+      "reception": {
+        "kicker": "Mottagning",
+        "timeLabel": "Tid",
+        "placeLabel": "Plats",
+        "description": "Efter vigseln blir det kaffe och tårta, följt av middag och dans."
+      },
+      "dressCode": {
+        "kicker": "Klädkod",
+        "description": "Mörk kostym",
+        "complementary": "Klädkoden mörk kostym innebär kostym där kavaj och byxa är i samma tyg och modell. Färgen skall vara svart, mörkgrå eller mörkblå. Skjortan skall vara ljus och slips eller fluga skall bäras. Du kan istället välja att bära klänning, färgen är då valfri men skall ge ett uppklätt intryck, gärna i ett fint material. Klänningen skall gå nedanför knäna och får gå hela vägen ner till anklarna. Slits är tillåten"
+      }
+    },
+    "details": {
+      "title": "Detaljer",
+      "date": "Datum",
+      "ceremony": "Vigsel",
+      "receptionParty": "Mottagning + Fest",
+      "dressCode": "Klädkod",
+      "dressCodeValue": "Mörk kostym"
+    },
     "ceremony": {
-      "title": "Vigseln",
+      "title": "Vigsel",
       "time": "14:00",
       "location": "Högby kyrka",
-      "desc": "Var med oss under en vacker ceremoni där vi utbyter våra löften."
+      "desc": "Example info "
     },
     "reception": {
-      "title": "Mottagningen",
+      "title": "Mottagning",
       "time": "16:00",
       "location": "Norrbyladan",
-      "desc": "Middag, dryck och dans följer direkt efter ceremonin."
+      "desc": "Example info "
     },
     "timeline": {
       "title": "Schema",
       "ceremony": "Vigsel",
-      "photos": "Foton & Mingel",
+      "fika": "Mottagning & Fika",
       "dinner": "Middag",
       "party": "Fest"
     }
@@ -50,6 +79,12 @@
   "rsvp": {
     "title": "OSA",
     "intro": "Vänligen meddela om ni kan komma senast 30 juni 2026.",
+    "perPersonNote": "En anmälan per gäst.",
+    "dayBefore": {
+      "title": "Dagen före - 18 september",
+      "description": "Vi anordnar en middag för de gäster som redan är på plats i Östergötland. Middagen, inspirerad av vår första dejt, hålls i hotellets restaurang till självkostnadspris. Meddela gärna om ni vill delta så reserverar vi bord.",
+      "question": "Vill du vara med?"
+    },
     "name": "Fullständigt namn",
     "email": "E-postadress",
     "email_placeholder": "din@email.se",
@@ -59,12 +94,14 @@
     "guests": "Antal gäster",
     "guestDetailsTitle": "Gästinformation",
     "guestCardTitle": "Gäst {number}",
-    "guestName": "Gästens namn",
-    "guestNamePlaceholder": "Ange gästens namn",
+    "guestName": "Namn",
+    "guestNamePlaceholder": "Ange namn",
     "guestInfo": "Kostinfo / Allergier",
-    "guestInfoPlaceholder": "Några kostbehov eller allergier för den här gästen?",
+    "guestInfoPlaceholder": "Några kostbehov eller allergier?",
     "guestDrink": "Dryckesval",
     "guestDrinkPlaceholder": "Välj dryckesval",
+    "toastmasterNoteBefore": "Om du vill hålla tal eller hitta på något kul under festen hittar du toastmasters under",
+    "toastmasterNoteAfter": ".",
     "alcohol": "Alkohol",
     "nonAlcohol": "Alkoholfritt",
     "dietary": "Allergier / Specialkost",
@@ -76,6 +113,7 @@
     "successTitle": "Tack!",
     "successMsg": "Ditt svar har skickats.",
     "sendAnother": "Skicka ett till",
+    "invalidEmail": "Ange en giltig e-postadress (måste innehålla @).",
     "error": "Något gick fel. Försök igen."
   },
   "contact": {

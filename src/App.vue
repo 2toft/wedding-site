@@ -19,7 +19,9 @@ const closeMenu = () => {
   <div class="app-container">
     <header class="site-header">
       <div class="container header-content">
-        <router-link to="/" class="logo" @click="closeMenu">M & J</router-link>
+        <router-link to="/" class="logo" @click="closeMenu"
+          >Nåtofts Bröllop</router-link
+        >
 
         <button
           class="mobile-menu-btn"
@@ -84,7 +86,7 @@ const closeMenu = () => {
 }
 
 .site-header {
-  background-color: $color-white;
+  background-color: $color-dark-green;
   padding: $spacing-sm 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: sticky;
@@ -101,7 +103,7 @@ const closeMenu = () => {
     font-family: $font-family-heading;
     font-size: $font-size-xl;
     font-weight: 400;
-    color: $color-text-heading;
+    color: $color-light-green;
     text-decoration: none;
   }
 
@@ -116,16 +118,28 @@ const closeMenu = () => {
       letter-spacing: $letter-spacing-meta;
       text-transform: uppercase;
       font-weight: 400;
-      color: $color-text-body;
+      color: $color-light-green;
       text-decoration: none;
       transition: color 0.3s ease;
+      position: relative;
+      padding-bottom: 0.25rem;
 
       &.router-link-active {
-        color: $color-primary-green;
+        color: $color-muted-green;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background-color: $color-muted-green;
+        }
       }
 
       &:hover {
-        color: $color-primary-green;
+        color: $color-muted-green;
       }
     }
 
@@ -134,7 +148,7 @@ const closeMenu = () => {
       top: 100%;
       left: 0;
       right: 0;
-      background: $color-white;
+      background: $color-dark-green;
       flex-direction: column;
       padding: $spacing-md;
       gap: $spacing-sm;
@@ -169,7 +183,7 @@ const closeMenu = () => {
       display: block;
       width: 24px;
       height: 2px;
-      background: $color-dark-green;
+      background: $color-white;
       position: relative;
 
       &::before,
@@ -178,7 +192,7 @@ const closeMenu = () => {
         position: absolute;
         width: 100%;
         height: 2px;
-        background: $color-dark-green;
+        background: $color-white;
         left: 0;
       }
 

@@ -31,15 +31,6 @@
 
       <transition name="fade">
         <div v-if="form.attending">
-          <BaseInput
-            id="guests"
-            type="number"
-            :label="$t('rsvp.guests')"
-            v-model="form.guests"
-            min="1"
-            max="5"
-          />
-
           <div class="guest-details-section">
             <h4>{{ $t("rsvp.guestDetailsTitle") }}</h4>
 
@@ -48,10 +39,6 @@
               :key="`guest-${index}`"
               class="guest-card"
             >
-              <p class="guest-card-title">
-                {{ $t("rsvp.guestCardTitle", { number: index + 1 }) }}
-              </p>
-
               <BaseInput
                 :id="`guest-name-${index}`"
                 :label="$t('rsvp.guestName')"
@@ -84,6 +71,43 @@
                     {{ $t("rsvp.nonAlcohol") }}
                   </option>
                 </select>
+              </div>
+            </div>
+          </div>
+
+          <p class="toastmaster-note text-body">
+            {{ $t("rsvp.toastmasterNoteBefore") }}
+            <a href="/contact" target="_blank" rel="noopener">
+              {{ $t("nav.contact") }}
+            </a>
+            {{ $t("rsvp.toastmasterNoteAfter") }}
+          </p>
+
+          <div class="pre-event-box">
+            <p class="pre-event-title">{{ $t("rsvp.dayBefore.title") }}</p>
+            <p class="pre-event-description text-body">
+              {{ $t("rsvp.dayBefore.description") }}
+            </p>
+
+            <div class="form-group radio-group">
+              <label>{{ $t("rsvp.dayBefore.question") }}</label>
+              <div class="options">
+                <label class="radio-label">
+                  <input
+                    type="radio"
+                    v-model="form.dayBeforeDinner"
+                    :value="true"
+                  />
+                  {{ $t("rsvp.yes") }}
+                </label>
+                <label class="radio-label">
+                  <input
+                    type="radio"
+                    v-model="form.dayBeforeDinner"
+                    :value="false"
+                  />
+                  {{ $t("rsvp.no") }}
+                </label>
               </div>
             </div>
           </div>
@@ -121,11 +145,13 @@
 </template>
 
 <script setup>
-import { computed, reactive, watch } from "vue";
+import { reactive, watch } from "vue";
 import { useRsvpForm } from "../composables/useRsvpForm";
 import BaseInput from "./BaseInput.vue";
 import BaseTextarea from "./BaseTextarea.vue";
 import BaseButton from "./BaseButton.vue";
+
+const emit = defineEmits(["submission-state-change"]);
 
 const { loading, error, success, submitToGoogleForm, resetForm } =
   useRsvpForm();
@@ -133,40 +159,27 @@ const { loading, error, success, submitToGoogleForm, resetForm } =
 const form = reactive({
   email: "",
   attending: null,
-  guests: 1,
+  dayBeforeDinner: null,
   guestDetails: [{ name: "", info: "", drinkPreference: "" }],
   message: "",
 });
-
-const normalizedGuests = computed(() => {
-  const count = Number(form.guests);
-  if (!Number.isFinite(count)) return 1;
-  return Math.min(5, Math.max(1, Math.floor(count)));
-});
-
-watch(
-  normalizedGuests,
-  (count) => {
-    if (form.guestDetails.length > count) {
-      form.guestDetails = form.guestDetails.slice(0, count);
-      return;
-    }
-
-    while (form.guestDetails.length < count) {
-      form.guestDetails.push({ name: "", info: "", drinkPreference: "" });
-    }
-  },
-  { immediate: true },
-);
 
 watch(
   () => form.attending,
   (attending) => {
     if (!attending) {
-      form.guests = 1;
+      form.dayBeforeDinner = null;
       form.guestDetails = [{ name: "", info: "", drinkPreference: "" }];
     }
   },
+);
+
+watch(
+  success,
+  (isSuccess) => {
+    emit("submission-state-change", isSuccess);
+  },
+  { immediate: true },
 );
 
 const handleSubmit = async () => {
@@ -178,9 +191,10 @@ const handleReset = () => {
   // Reset form data
   form.email = "";
   form.attending = null;
-  form.guests = 1;
+  form.dayBeforeDinner = null;
   form.guestDetails = [{ name: "", info: "", drinkPreference: "" }];
   form.message = "";
+  emit("submission-state-change", false);
 };
 </script>
 
@@ -202,16 +216,40 @@ const handleReset = () => {
   }
 }
 
-.guest-card {
+.pre-event-box {
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   padding: $spacing-md;
   margin-bottom: $spacing-md;
 }
 
-.guest-card-title {
+.toastmaster-note {
+  margin-bottom: $spacing-md;
+  padding: $spacing-sm $spacing-md;
+  background: rgba(184, 217, 187, 0.2);
+  border-left: 3px solid $color-primary-green;
+  border-radius: 6px;
+
+  a {
+    color: $color-dark-green;
+    font-weight: 600;
+  }
+}
+
+.pre-event-title {
   font-weight: 600;
-  margin: 0 0 $spacing-sm;
+  margin: 0 0 $spacing-xs;
+}
+
+.pre-event-description {
+  margin-bottom: $spacing-sm;
+}
+
+.guest-card {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: $spacing-md;
+  margin-bottom: $spacing-md;
 }
 
 .error-msg {

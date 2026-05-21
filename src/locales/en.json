@@ -12,28 +12,57 @@
   },
   "home": {
     "date": "September 19, 2026",
-    "welcome": "We invite you to celebrate our special day with us.",
+    "welcome": "",
     "rsvpBtn": "RSVP",
     "detailsBtn": "Wedding Details"
   },
   "info": {
     "title": "Wedding Information",
+    "segment": {
+      "date": {
+        "kicker": "Date"
+      },
+      "wedding": {
+        "kicker": "Wedding Ceremony",
+        "timeLabel": "Time",
+        "placeLabel": "Place"
+      },
+      "reception": {
+        "kicker": "Reception",
+        "timeLabel": "Time",
+        "placeLabel": "Place",
+        "description": "After the ceremony there will be coffee and cake, followed by dinner and dancing."
+      },
+      "dressCode": {
+        "kicker": "Dress Code",
+        "description": "Dark suit",
+        "complementary": "A dark suit means a matching suit jacket and trousers in the same fabric and style. The color should be black, dark gray, or dark blue. The shirt should be light, and a tie or bow tie should be worn. You may also choose to wear a dress; the color is optional, but it should give a dressed-up impression, preferably in a fine material. The dress should fall below the knees and may go all the way down to the ankles. A slit is allowed."
+      }
+    },
+    "details": {
+      "title": "Details",
+      "date": "Date",
+      "ceremony": "Ceremony",
+      "receptionParty": "Reception + Party",
+      "dressCode": "Dress Code",
+      "dressCodeValue": "Formal"
+    },
     "ceremony": {
-      "title": "The Ceremony",
+      "title": "Ceremony",
       "time": "02:00 PM",
       "location": "Högby Church",
-      "desc": "Join us for a beautiful ceremony to exchange our vows."
+      "desc": "Example info "
     },
     "reception": {
-      "title": "The Reception",
+      "title": "Reception",
       "time": "04:00 PM",
       "location": "Norrbyladan",
-      "desc": "Dinner, drinks, and dancing to follow immediately after the ceremony."
+      "desc": "Example info "
     },
     "timeline": {
       "title": "Schedule",
       "ceremony": "Ceremony",
-      "photos": "Photos & Cocktails",
+      "fika": "Reception & Fika",
       "dinner": "Dinner",
       "party": "Party"
     }
@@ -50,6 +79,12 @@
   "rsvp": {
     "title": "RSVP",
     "intro": "Please let us know if you can make it by June 30th, 2026.",
+    "perPersonNote": "One RSVP per guest.",
+    "dayBefore": {
+      "title": "The day before - September 18",
+      "description": "We are planning a self-paid dinner at Hotel Starby inspired by our first date, so we can reserve a table for those who want and can join.",
+      "question": "Would you like to join?"
+    },
     "name": "Full Name",
     "email": "Email Address",
     "email_placeholder": "your@email.com",
@@ -59,12 +94,14 @@
     "guests": "Number of Guests",
     "guestDetailsTitle": "Guest Information",
     "guestCardTitle": "Guest {number}",
-    "guestName": "Guest Name",
-    "guestNamePlaceholder": "Enter guest name",
+    "guestName": "Name",
+    "guestNamePlaceholder": "Enter name",
     "guestInfo": "Dietary Notes / Allergies",
-    "guestInfoPlaceholder": "Any dietary needs or allergies for this guest?",
+    "guestInfoPlaceholder": "Any dietary needs or allergies?",
     "guestDrink": "Drink Preference",
     "guestDrinkPlaceholder": "Select drink preference",
+    "toastmasterNoteBefore": "If you want to give a speech or plan something fun during the celebration, you can find the toastmasters under",
+    "toastmasterNoteAfter": ".",
     "alcohol": "Alcohol",
     "nonAlcohol": "Non-alcohol",
     "dietary": "Dietary Restrictions / Allergies",
@@ -76,6 +113,7 @@
     "successTitle": "Thank you!",
     "successMsg": "Your RSVP has been sent successfully.",
     "sendAnother": "Send another",
+    "invalidEmail": "Please enter a valid email address (must include @).",
     "error": "Something went wrong. Please try again."
   },
   "contact": {

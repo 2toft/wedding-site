@@ -2,48 +2,56 @@
   <div class="wedding-info container section">
     <h2>{{ $t("info.title") }}</h2>
 
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>{{ $t("info.ceremony.title") }}</h3>
-        <p class="time text-meta">{{ $t("info.ceremony.time") }}</p>
-        <p class="location">{{ $t("info.ceremony.location") }}</p>
-        <p class="address">595 94, Högby</p>
-        <p class="description text-body">
-          {{ $t("info.ceremony.desc") }}
+    <div class="segments">
+      <section class="segment">
+        <p class="segment-kicker">
+          {{ $t("info.segment.date.kicker") }}
         </p>
-      </div>
+        <p class="segment-line text-body">{{ $t("home.date") }}</p>
+      </section>
 
-      <div class="info-card">
-        <h3>{{ $t("info.reception.title") }}</h3>
-        <p class="time text-meta">{{ $t("info.reception.time") }}</p>
-        <p class="location">{{ $t("info.reception.location") }}</p>
-        <p class="address">595 94, Norrby</p>
-        <p class="description text-body">
-          {{ $t("info.reception.desc") }}
+      <section class="segment">
+        <p class="segment-kicker">
+          {{ $t("info.segment.wedding.kicker") }}
         </p>
-      </div>
-    </div>
+        <p class="segment-line text-body">
+          <strong>{{ $t("info.segment.wedding.timeLabel") }}:</strong>
+          {{ $t("info.ceremony.time") }}
+        </p>
+        <p class="segment-line text-body">
+          <strong>{{ $t("info.segment.wedding.placeLabel") }}:</strong>
+          {{ $t("info.ceremony.location") }}
+        </p>
+      </section>
 
-    <div class="timeline">
-      <h3>{{ $t("info.timeline.title") }}</h3>
-      <ul>
-        <li>
-          <strong class="text-meta">{{ $t("info.ceremony.time") }}</strong> -
-          {{ $t("info.timeline.ceremony") }}
-        </li>
-        <li>
-          <strong class="text-meta">14:30</strong> -
-          {{ $t("info.timeline.photos") }}
-        </li>
-        <li>
-          <strong class="text-meta">17:00</strong> -
-          {{ $t("info.timeline.dinner") }}
-        </li>
-        <li>
-          <strong class="text-meta">20:00</strong> -
-          {{ $t("info.timeline.party") }}
-        </li>
-      </ul>
+      <section class="segment">
+        <p class="segment-kicker">
+          {{ $t("info.segment.reception.kicker") }}
+        </p>
+        <p class="segment-line text-body">
+          <strong>{{ $t("info.segment.reception.timeLabel") }}:</strong>
+          {{ $t("info.reception.time") }}
+        </p>
+        <p class="segment-line text-body">
+          <strong>{{ $t("info.segment.reception.placeLabel") }}:</strong>
+          {{ $t("info.reception.location") }}
+        </p>
+        <p class="segment-description text-body">
+          {{ $t("info.segment.reception.description") }}
+        </p>
+      </section>
+
+      <section class="segment">
+        <p class="segment-kicker">
+          {{ $t("info.segment.dressCode.kicker") }}
+        </p>
+        <p class="segment-line text-body">
+          <strong>{{ $t("info.segment.dressCode.description") }}</strong>
+        </p>
+        <p class="segment-description text-body">
+          {{ $t("info.segment.dressCode.complementary") }}
+        </p>
+      </section>
     </div>
   </div>
 </template>
@@ -53,70 +61,51 @@
 @use "../styles/variables" as *;
 
 .wedding-info {
-  text-align: center;
-}
+  max-width: 920px;
 
-.info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: $spacing-lg;
-  margin: $spacing-lg 0;
-
-  @include mobile {
-    grid-template-columns: 1fr;
-    gap: $spacing-md;
-  }
-}
-
-.info-card {
-  background-color: $color-white;
-  padding: $spacing-lg;
-  border-radius: 2px; // Sharper corners for editorial look? Or keep rounded? Prompt says "Rounded letterforms" but "More printed invitation". Usually printed cards are rectangular. I'll reduce radius.
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); // Softer shadow
-
-  .time {
-    margin-bottom: $spacing-xs;
-  }
-
-  .location {
-    font-family: $font-family-heading;
-    font-size: $font-size-lg;
-    margin-bottom: $spacing-xs;
-    color: $color-text-heading;
-  }
-
-  .address {
-    font-size: $font-size-sm;
-    color: $color-text-body;
+  h2 {
+    text-align: center;
     margin-bottom: $spacing-md;
   }
 }
 
-.timeline {
-  margin-top: $spacing-xl;
+.segments {
+  display: grid;
+  // gap: $spacing-sm;
+}
 
-  ul {
-    list-style: none;
-    padding: 0;
-    max-width: 400px;
+.segment {
+  padding: clamp(0.9rem, 2.8vw, 1.4rem);
+  text-align: center;
+
+  h3 {
+    text-align: center;
+    margin-bottom: $spacing-xs;
+    color: $color-text-heading;
+  }
+
+  .segment-kicker {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-meta;
     margin: 0 auto;
-    text-align: left;
+    margin-bottom: 0.35rem;
+    font-size: $font-size-sm;
+  }
 
-    li {
-      padding: $spacing-sm 0;
-      border-bottom: 1px solid $color-soft-gray;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+  .segment-line {
+    margin-bottom: 0.35rem;
+  }
 
-      &:last-child {
-        border-bottom: none;
-      }
+  .segment-description {
+    margin-top: $spacing-xs;
+    max-width: 66ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-      strong {
-        color: $color-text-meta;
-      }
-    }
+  @include mobile {
+    padding: clamp(0.75rem, 3.5vw, 1rem);
   }
 }
 </style>
