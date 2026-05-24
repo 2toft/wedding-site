@@ -87,7 +87,7 @@
     },
     "name": "Full Name",
     "email": "Email Address",
-    "email_placeholder": "your@email.com",
+    "email_placeholder": "your{'@'}email.com",
     "attending": "Will you be attending?",
     "yes": "Yes, happily",
     "no": "No, regretfully",
@@ -113,7 +113,7 @@
     "successTitle": "Thank you!",
     "successMsg": "Your RSVP has been sent successfully.",
     "sendAnother": "Send another",
-    "invalidEmail": "Please enter a valid email address (must include @).",
+    "invalidEmail": "Please enter a valid email address (must include {'@'}).",
     "error": "Something went wrong. Please try again."
   },
   "contact": {

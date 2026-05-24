@@ -87,7 +87,7 @@
     },
     "name": "Fullständigt namn",
     "email": "E-postadress",
-    "email_placeholder": "din@email.se",
+    "email_placeholder": "din{'@'}email.se",
     "attending": "Kommer du?",
     "yes": "Ja, gärna",
     "no": "Nej, tyvärr",
@@ -113,7 +113,7 @@
     "successTitle": "Tack!",
     "successMsg": "Ditt svar har skickats.",
     "sendAnother": "Skicka ett till",
-    "invalidEmail": "Ange en giltig e-postadress (måste innehålla @).",
+    "invalidEmail": "Ange en giltig e-postadress (måste innehålla {'@'}).",
     "error": "Något gick fel. Försök igen."
   },
   "contact": {
