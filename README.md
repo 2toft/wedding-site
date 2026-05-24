@@ -88,3 +88,10 @@ The RSVP form submits data to a Google Form. To make this work:
 
 - **Colors & Fonts**: Edit `src/styles/_variables.scss`
 - **Content**: Edit the respective Vue files in `src/views`
+
+## Localization Notes
+
+- This project uses Vue I18n message syntax, where `@` has special meaning for linked messages.
+- To render a literal `@` character in translation text, escape it as `{'@'}`.
+- Example: use `your{'@'}email.com` instead of `your@email.com`.
+- If a raw `@` is added in locale JSON, it can throw `Invalid linked format` at runtime.

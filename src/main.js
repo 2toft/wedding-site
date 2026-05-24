@@ -5,7 +5,7 @@ import i18n from "./i18n";
 import { COUPLE_NAMES } from "./config/site";
 import "./styles/main.scss";
 
-document.title = `${COUPLE_NAMES} - Wedding`;
+document.title = `Nåtofts bröllop`;
 
 const app = createApp(App);
 
