@@ -102,3 +102,21 @@ strong {
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Piazzolla";
+  src: url("../assets/fonts/Piazzolla-VariableFont_opsz,wght.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Piazzolla-Italic";
+  src: url("../assets/fonts/Piazzolla-Italic-VariableFont_opsz,wght.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}

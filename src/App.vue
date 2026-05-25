@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import LanguageSwitcher from "./components/LanguageSwitcher.vue";
-import { COUPLE_NAMES, NAV_EXTERNAL_URL } from "./config/site";
+import { COUPLE_NAMES } from "./config/site";
 
 const isMenuOpen = ref(false);
 
@@ -38,23 +38,21 @@ const closeMenu = () => {
           <router-link to="/info" @click="closeMenu">{{
             $t("nav.info")
           }}</router-link>
-          <router-link to="/directions" @click="closeMenu">{{
-            $t("nav.directions")
-          }}</router-link>
           <router-link to="/rsvp" @click="closeMenu">{{
             $t("nav.rsvp")
+          }}</router-link>
+          <router-link to="/transportation" @click="closeMenu">{{
+            $t("nav.transportation")
+          }}</router-link>
+          <router-link to="/accommodation" @click="closeMenu">{{
+            $t("nav.accommodation")
+          }}</router-link>
+          <router-link to="/gifts" @click="closeMenu">{{
+            $t("nav.gifts")
           }}</router-link>
           <router-link to="/contact" @click="closeMenu">{{
             $t("nav.contact")
           }}</router-link>
-          <a
-            :href="NAV_EXTERNAL_URL"
-            target="_blank"
-            rel="noopener"
-            @click="closeMenu"
-          >
-            {{ $t("nav.external") }}
-          </a>
           <LanguageSwitcher />
         </nav>
       </div>

@@ -18,9 +18,29 @@
             class="contact-item"
           >
             <p class="person-name">{{ $t(person.nameKey) }}</p>
-            <a :href="`tel:${person.phoneHref}`" class="phone-link">
+            <a
+              v-if="person.phoneHref"
+              :href="`tel:${person.phoneHref}`"
+              class="phone-link"
+            >
               {{ $t("contact.phone") }}: {{ person.phoneDisplay }}
             </a>
+            <p v-else-if="person.phoneDisplay" class="phone-text">
+              {{ $t("contact.phone") }}: {{ person.phoneDisplay }}
+            </p>
+
+            <ul v-if="person.services" class="service-list">
+              <li
+                v-for="service in person.services"
+                :key="service.nameKey"
+                class="service-item"
+              >
+                <span class="service-name">{{ $t(service.nameKey) }}</span>
+                <a :href="`tel:${service.phoneHref}`" class="phone-link">
+                  {{ service.phoneDisplay }}
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -35,13 +55,13 @@ const contactGroups = [
     people: [
       {
         nameKey: "contact.groom",
-        phoneDisplay: "+46 70 123 45 67",
-        phoneHref: "+46701234567",
+        phoneDisplay: "0707 661 443",
+        phoneHref: "0707661443",
       },
       {
         nameKey: "contact.bride",
-        phoneDisplay: "+46 70 987 65 43",
-        phoneHref: "+46709876543",
+        phoneDisplay: "0730 093 39 94",
+        phoneHref: "0730093394",
       },
     ],
   },
@@ -50,13 +70,43 @@ const contactGroups = [
     people: [
       {
         nameKey: "contact.toastmasterCalle",
-        phoneDisplay: "+46 70 111 22 33",
-        phoneHref: "+46701112233",
+        phoneDisplay: "0739 53 53 82",
+        phoneHref: "0739535382",
       },
       {
         nameKey: "contact.toastmasterSimon",
-        phoneDisplay: "+46 70 444 55 66",
-        phoneHref: "+46704445566",
+        phoneDisplay: "0707 20 37 48",
+        phoneHref: "0707203748",
+      },
+    ],
+  },
+  {
+    titleKey: "contact.servicesTitle",
+    people: [
+      {
+        nameKey: "contact.taxiService",
+        services: [
+          {
+            nameKey: "contact.markabTaxi",
+            phoneDisplay: "076 310 07 79",
+            phoneHref: "0763100779",
+          },
+          {
+            nameKey: "contact.mjolbyTaxi",
+            phoneDisplay: "070 783 07 75",
+            phoneHref: "0707830775",
+          },
+        ],
+      },
+      {
+        nameKey: "contact.starbyHotel",
+        phoneDisplay: "0143 751 00",
+        phoneHref: "014375100",
+      },
+      {
+        nameKey: "contact.busCompany",
+        phoneDisplay: "0142-121 50",
+        phoneHref: "014212150",
       },
     ],
   },
@@ -87,15 +137,17 @@ const contactGroups = [
 }
 
 .contact-group {
-  background: $color-white;
-  padding: $spacing-lg;
+  background: $color-dark-green;
+  padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   text-align: left;
+  margin: 0 1rem;
 
   h3 {
     margin-bottom: $spacing-md;
     text-align: center;
+    color: $color-light-green;
   }
 }
 
@@ -105,9 +157,9 @@ const contactGroups = [
 }
 
 .contact-item {
-  border: 1px solid $color-soft-gray;
   border-radius: 6px;
   padding: $spacing-sm;
+  background: $color-light-green;
 }
 
 .person-name {
@@ -118,11 +170,35 @@ const contactGroups = [
 .phone-link {
   font-size: $font-size-md;
   font-weight: 500;
-  color: $color-text-heading;
   text-decoration: none;
 
   &:hover {
     color: $color-primary-green;
   }
+}
+
+.phone-text {
+  margin: 0;
+  font-size: $font-size-md;
+  font-weight: 500;
+}
+
+.service-list {
+  margin: $spacing-xs 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.service-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.service-name {
+  font-weight: 500;
 }
 </style>

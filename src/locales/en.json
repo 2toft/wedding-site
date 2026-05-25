@@ -2,13 +2,14 @@
   "nav": {
     "home": "Home",
     "info": "Wedding Info",
-    "directions": "Directions",
+    "transportation": "Transportation",
+    "accommodation": "Accommodation",
+    "gifts": "Gifts",
     "rsvp": "RSVP",
-    "contact": "Contact",
-    "external": "Registry"
+    "contact": "Contact"
   },
   "footer": {
-    "copyright": "© 2026 {coupleNames}. Can't wait to celebrate with you!"
+    "copyright": "© 2026 {coupleNames}."
   },
   "home": {
     "date": "September 19, 2026",
@@ -36,7 +37,9 @@
       "dressCode": {
         "kicker": "Dress Code",
         "description": "Dark suit",
-        "complementary": "A dark suit means a matching suit jacket and trousers in the same fabric and style. The color should be black, dark gray, or dark blue. The shirt should be light, and a tie or bow tie should be worn. You may also choose to wear a dress; the color is optional, but it should give a dressed-up impression, preferably in a fine material. The dress should fall below the knees and may go all the way down to the ankles. A slit is allowed."
+        "complementary": "A dark suit means a matching suit jacket and trousers in the same fabric and style. The color should be black, dark gray, or dark blue. The shirt should be light, and a tie or bow tie should be worn. You may also choose to wear a dress; the color is optional, but it should give a dressed-up impression, preferably in a fine material. The dress should fall below the knees and may go all the way down to the ankles. A slit is allowed.",
+        "showMore": "Show details",
+        "showLess": "Hide details"
       }
     },
     "details": {
@@ -50,13 +53,13 @@
     "ceremony": {
       "title": "Ceremony",
       "time": "02:00 PM",
-      "location": "Högby Church",
-      "desc": "Example info "
+      "location": "Högby Church, Mjölby",
+      "desc": "Bus transportation will be arranged from the hotel to the church, more info under the Transportation tab."
     },
     "reception": {
       "title": "Reception",
       "time": "04:00 PM",
-      "location": "Norrbyladan",
+      "location": "Norrbyladan, Mjölby",
       "desc": "Example info "
     },
     "timeline": {
@@ -65,16 +68,52 @@
       "fika": "Reception & Fika",
       "dinner": "Dinner",
       "party": "Party"
+    },
+    "kids": {
+      "kicker": "Children",
+      "message": "We love your little ones, but we kindly ask that children stay at home for this celebration. Babies who are breastfeeding are, of course, warmly welcome."
     }
   },
-  "directions": {
-    "title": "Directions",
-    "intro": "For those unfamiliar with the area, here is how to find us. We will arrange transportation between the church and the reception.",
-    "ceremony": "Ceremony",
-    "reception": "Reception",
-    "hotel": "Hotel",
+  "transportation": {
+    "title": "Transportation",
+    "intro": "Bus transportation will be arranged between the hotel, church, and reception venue.",
+    "toCeremony": {
+      "title": "To the Ceremony",
+      "route": "Starby Hotel to Högby Church",
+      "departure": "Departure: 13:15",
+      "arrival": "Arrival: 13:40"
+    },
+    "toHotel": {
+      "title": "Back to the Hotel",
+      "route": "Norrbyladan to Starby Hotel",
+      "firstDeparture": "Departure 1: 23:30",
+      "secondDeparture": "Departure 2: 02:00"
+    },
+    "note": "Please be on time at the bus stop. The bus leaves at the listed times."
+  },
+  "accommodation": {
+    "title": "Accommodation",
+    "intro": "We recommend staying at Starby Hotel, where we have arranged transportation for the wedding day.",
     "hotelName": "Starby Hotel",
-    "openMaps": "Open map"
+    "locationLabel": "Location",
+    "location": "Ödeshögsvägen 2, 592 40 Vadstena",
+    "parkingLabel": "Parking",
+    "parking": "Parking is available directly outside the hotel.",
+    "checkInLabel": "Check-in",
+    "checkIn": "Check-in from 15:00.",
+    "frontDeskLabel": "Front desk",
+    "frontDesk": "0143 751 00",
+    "frontDeskPhoneRef": "014375100",
+    "openMaps": "Open map",
+    "bookRooms": "Book rooms",
+    "promoCodeNote": "The promo code \"Bröllop2026\" is already included in the booking link."
+  },
+  "gift": {
+    "title": "Gifts",
+    "intro": "We are so happy that you want to celebrate our big day with us.",
+    "details": "Your presence is the greatest gift, but if you would like to give us something, a contribution to our honeymoon would mean a lot.",
+    "button": "View gift list",
+    "listUrl": "https://example.com/gift-list"
   },
   "rsvp": {
     "title": "RSVP",
@@ -122,9 +161,15 @@
     "phone": "Phone",
     "coupleTitle": "Bride & Groom",
     "toastmastersTitle": "Toastmasters",
+    "servicesTitle": "Services",
     "groom": "Johan",
-    "bride": "Micaela",
+    "bride": "Micaéla",
     "toastmasterCalle": "Calle",
-    "toastmasterSimon": "Simon"
+    "toastmasterSimon": "Simon",
+    "taxiService": "Taxi service",
+    "markabTaxi": "Markab taxi",
+    "mjolbyTaxi": "Mjölby taxis",
+    "starbyHotel": "Starby Hotel",
+    "busCompany": "Blåklint buss"
   }
 }

@@ -3,13 +3,13 @@
     <section class="hero">
       <img
         class="side-art side-art-right joyride-art"
-        src="/joyride.svg"
+        src="/illustrations/joyride.svg"
         alt=""
         aria-hidden="true"
       />
       <img
         class="side-art side-art-left discoball-art"
-        src="/discoball.svg"
+        src="/illustrations/discoball.svg"
         alt=""
         aria-hidden="true"
       />
@@ -148,6 +148,7 @@ import { COUPLE_NAMES } from "../config/site";
     }
 
     .joyride-art {
+      top: calc(70% + clamp(90px, 22vw, 120px));
       width: clamp(90px, 22vw, 120px);
     }
 

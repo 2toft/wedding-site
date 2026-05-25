@@ -2,10 +2,11 @@
   "nav": {
     "home": "Hem",
     "info": "Bröllopsinfo",
-    "directions": "Hitta hit",
+    "transportation": "Transport",
+    "accommodation": "Boende",
+    "gifts": "Gåvor",
     "rsvp": "OSA",
-    "contact": "Kontakt",
-    "external": "Presentlista"
+    "contact": "Kontakt"
   },
   "footer": {
     "copyright": "© 2026 {coupleNames}. "
@@ -36,7 +37,9 @@
       "dressCode": {
         "kicker": "Klädkod",
         "description": "Mörk kostym",
-        "complementary": "Klädkoden mörk kostym innebär kostym där kavaj och byxa är i samma tyg och modell. Färgen skall vara svart, mörkgrå eller mörkblå. Skjortan skall vara ljus och slips eller fluga skall bäras. Du kan istället välja att bära klänning, färgen är då valfri men skall ge ett uppklätt intryck, gärna i ett fint material. Klänningen skall gå nedanför knäna och får gå hela vägen ner till anklarna. Slits är tillåten"
+        "complementary": "Klädkoden mörk kostym innebär kostym där kavaj och byxa är i samma tyg och modell. Färgen skall vara svart, mörkgrå eller mörkblå. Skjortan skall vara ljus och slips eller fluga skall bäras. Du kan istället välja att bära klänning, färgen är då valfri men skall ge ett uppklätt intryck, gärna i ett fint material. Klänningen skall gå nedanför knäna och får gå hela vägen ner till anklarna. Slits är tillåten.",
+        "showMore": "Läs mer",
+        "showLess": "Dölj"
       }
     },
     "details": {
@@ -50,13 +53,13 @@
     "ceremony": {
       "title": "Vigsel",
       "time": "14:00",
-      "location": "Högby kyrka",
-      "desc": "Example info "
+      "location": "Högby kyrka, Mjölby",
+      "desc": "Busstransport från hotellet till kyrkan ordnas, mer info under fliken Transport."
     },
     "reception": {
       "title": "Mottagning",
       "time": "16:00",
-      "location": "Norrbyladan",
+      "location": "Norrbyladan, Mjölby",
       "desc": "Example info "
     },
     "timeline": {
@@ -65,16 +68,51 @@
       "fika": "Mottagning & Fika",
       "dinner": "Middag",
       "party": "Fest"
+    },
+    "kids": {
+      "kicker": "Barn",
+      "message": "Vi älskar era barn, men vi önskar att de stannar hemma under firandet. Ammande bebisar är självklart varmt välkomna."
     }
   },
-  "directions": {
-    "title": "Hitta hit",
-    "intro": "För er som inte är bekanta med området, här är hur ni hittar till oss. Vi löser skjuts mellan kyrka och mottagning.",
-    "ceremony": "Vigsel",
-    "reception": "Mottagning",
-    "hotel": "Hotell",
+  "transportation": {
+    "title": "Transport",
+    "intro": "Busstransport ordnas mellan hotellet, kyrkan och festlokalen.",
+    "toCeremony": {
+      "title": "Till vigseln",
+      "route": "Starby Hotell till Högby kyrka",
+      "departure": "Avgång: 13:15",
+      "arrival": "Ankomst: 13:40"
+    },
+    "toHotel": {
+      "title": "Tillbaka till hotellet",
+      "route": "Norrbyladan till Starby Hotell",
+      "firstDeparture": "Avgång 1: 23:30",
+      "secondDeparture": "Avgång 2: 02:00"
+    },
+    "note": "Var gärna på plats i god tid vid busshållplatsen. Bussen avgår på utsatt tid."
+  },
+  "accommodation": {
+    "title": "Boende",
+    "intro": "Vi rekommenderar att bo på Starby Hotell, därifrån ordnas transport på bröllopsdagen.",
     "hotelName": "Starby Hotell",
-    "openMaps": "Öppna karta"
+    "locationLabel": "Adress",
+    "location": "Ödeshögsvägen 2, 592 40 Vadstena",
+    "parkingLabel": "Parkering",
+    "parking": "Parkering finns direkt utanför hotellet.",
+    "checkInLabel": "Incheckning",
+    "checkIn": "Incheckning från 15:00.",
+    "frontDeskLabel": "Reception",
+    "frontDesk": "0143 751 00",
+    "openMaps": "Öppna karta",
+    "bookRooms": "Boka rum",
+    "promoCodeNote": "Rabattkoden \"Bröllop2026\" ingår redan i bokningslänken."
+  },
+  "gift": {
+    "title": "Gåvor",
+    "intro": "Vi är så glada att ni vill komma och fira vår stora dag med oss.",
+    "details": "Er närvaro är den största gåvan, men om ni vill ge något får ni gärna bidra till vår bröllopsresa.",
+    "button": "Se presentlista",
+    "listUrl": "https://example.com/gift-list"
   },
   "rsvp": {
     "title": "OSA",
@@ -122,9 +160,15 @@
     "phone": "Telefon",
     "coupleTitle": "Brudpar",
     "toastmastersTitle": "Toastmasters",
+    "servicesTitle": "Tjänster",
     "groom": "Johan",
-    "bride": "Micaela",
+    "bride": "Micaéla",
     "toastmasterCalle": "Calle",
-    "toastmasterSimon": "Simon"
+    "toastmasterSimon": "Simon",
+    "taxiService": "Taxi",
+    "markabTaxi": "Markab taxi",
+    "mjolbyTaxi": "Mjölby taxis",
+    "starbyHotel": "Starby Hotell",
+    "busCompany": "Blåklint buss"
   }
 }
