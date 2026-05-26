@@ -71,7 +71,7 @@
     },
     "kids": {
       "kicker": "Children",
-      "message": "We love your little ones, but we kindly ask that children stay at home for this celebration. Babies who are breastfeeding are, of course, warmly welcome."
+      "message": "Children are wonderful, but on this day we choose to celebrate in adult company. Babies who are breastfeeding are, of course, warmly welcome."
     }
   },
   "transportation": {
@@ -98,9 +98,9 @@
     "locationLabel": "Location",
     "location": "Ödeshögsvägen 2, 592 40 Vadstena",
     "parkingLabel": "Parking",
-    "parking": "Parking is available directly outside the hotel.",
+    "parking": "Available directly outside the hotel.",
     "checkInLabel": "Check-in",
-    "checkIn": "Check-in from 15:00.",
+    "checkIn": "From 15:00.",
     "frontDeskLabel": "Front desk",
     "frontDesk": "0143 751 00",
     "frontDeskPhoneRef": "014375100",

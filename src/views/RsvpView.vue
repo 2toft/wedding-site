@@ -1,5 +1,12 @@
 <template>
   <div class="rsvp container section">
+    <img
+      class="side-art side-art-right rsvp-art"
+      src="/illustrations/joyride_dark.svg"
+      alt=""
+      aria-hidden="true"
+    />
+
     <h2 v-if="!isSubmitted">{{ $t("rsvp.title") }}</h2>
     <p v-if="!isSubmitted" class="intro text-body">
       {{ $t("rsvp.intro") }}
@@ -29,11 +36,40 @@ const handleSubmissionStateChange = (submitted) => {
 @use "../styles/variables" as *;
 
 .rsvp {
+  position: relative;
+  overflow: hidden;
   max-width: 800px;
   margin: 0 auto;
 
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .side-art {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.24;
+    object-fit: contain;
+  }
+
+  .side-art-right {
+    right: clamp(8px, 2vw, 28px);
+    top: 46%;
+    transform: translateY(-50%);
+    width: clamp(105px, 16vw, 150px);
+  }
+
   h2 {
     text-align: center;
+  }
+
+  @include mobile {
+    .side-art-right {
+      width: clamp(78px, 22vw, 110px);
+      opacity: 0.16;
+    }
   }
 }
 

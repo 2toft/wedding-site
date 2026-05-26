@@ -1,5 +1,18 @@
 <template>
   <div class="wedding-info container section">
+    <img
+      class="side-art side-art-left cheers-art"
+      src="/illustrations/cheers.svg"
+      alt=""
+      aria-hidden="true"
+    />
+    <img
+      class="side-art side-art-right discoball-art"
+      src="/illustrations/discoball_dark.svg"
+      alt=""
+      aria-hidden="true"
+    />
+
     <h2>{{ $t("info.title") }}</h2>
 
     <div class="segments">
@@ -96,17 +109,58 @@ const isDressCodeExpanded = ref(false);
 @use "../styles/variables" as *;
 
 .wedding-info {
+  position: relative;
+  overflow: hidden;
   max-width: 920px;
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .side-art {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.24;
+    object-fit: contain;
+  }
+
+  .side-art-left {
+    left: clamp(8px, 2vw, 24px);
+    top: 14%;
+    width: clamp(90px, 16vw, 140px);
+  }
+
+  .side-art-right {
+    right: clamp(8px, 2vw, 24px);
+    top: 10%;
+    width: clamp(78px, 12vw, 110px);
+  }
 
   h2 {
     text-align: center;
     margin-bottom: $spacing-md;
   }
+
+  @include mobile {
+    .side-art {
+      opacity: 0.18;
+    }
+
+    .side-art-left {
+      width: clamp(70px, 22vw, 100px);
+    }
+
+    .side-art-right {
+      width: clamp(56px, 16vw, 84px);
+    }
+  }
 }
 
 .segments {
   display: grid;
-  // gap: $spacing-sm;
+  margin: 0 1rem;
 }
 
 .kids-note {

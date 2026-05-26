@@ -1,5 +1,12 @@
 <template>
   <div class="transportation container section">
+    <img
+      class="side-art side-art-right car-art"
+      src="/illustrations/new_car.svg"
+      alt=""
+      aria-hidden="true"
+    />
+
     <h2>{{ $t("transportation.title") }}</h2>
     <p class="intro text-body">{{ $t("transportation.intro") }}</p>
 
@@ -27,7 +34,36 @@
 @use "../styles/variables" as *;
 
 .transportation {
+  position: relative;
+  overflow: hidden;
   text-align: center;
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .side-art {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.3;
+    object-fit: contain;
+  }
+
+  .side-art-right {
+    right: clamp(12px, 3vw, 40px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(110px, 18vw, 170px);
+  }
+
+  @include mobile {
+    .side-art {
+      opacity: 0.2;
+      width: clamp(85px, 24vw, 120px);
+    }
+  }
 }
 
 .intro {
@@ -51,7 +87,6 @@
   border-radius: 8px;
   padding: $spacing-md;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  margin: 0 1rem;
 
   h3 {
     color: inherit;

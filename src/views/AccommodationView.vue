@@ -1,5 +1,12 @@
 <template>
   <div class="accommodation container section">
+    <img
+      class="side-art side-art-right accommodation-art"
+      src="/illustrations/discoball.svg"
+      alt=""
+      aria-hidden="true"
+    />
+
     <h2>{{ $t("accommodation.title") }}</h2>
     <p class="intro text-body">{{ $t("accommodation.intro") }}</p>
 
@@ -71,7 +78,35 @@ const accommodationInfo = {
 @use "../styles/variables" as *;
 
 .accommodation {
+  position: relative;
+  overflow: hidden;
   text-align: center;
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .side-art {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.22;
+    object-fit: contain;
+  }
+
+  .side-art-right {
+    right: clamp(8px, 2vw, 24px);
+    top: 18%;
+    width: clamp(82px, 12vw, 115px);
+  }
+
+  @include mobile {
+    .side-art-right {
+      width: clamp(62px, 18vw, 85px);
+      opacity: 0.15;
+    }
+  }
 }
 
 .intro {

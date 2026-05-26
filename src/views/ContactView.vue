@@ -1,5 +1,12 @@
 <template>
   <div class="contact container section">
+    <img
+      class="side-art side-art-left contact-art"
+      src="/illustrations/cheers.svg"
+      alt=""
+      aria-hidden="true"
+    />
+
     <h2>{{ $t("contact.title") }}</h2>
     <p class="intro">{{ $t("contact.intro") }}</p>
 
@@ -60,7 +67,7 @@ const contactGroups = [
       },
       {
         nameKey: "contact.bride",
-        phoneDisplay: "0730 093 39 94",
+        phoneDisplay: "0730 93 39 94",
         phoneHref: "0730093394",
       },
     ],
@@ -117,9 +124,38 @@ const contactGroups = [
 @use "../styles/variables" as *;
 
 .contact {
+  position: relative;
+  overflow: hidden;
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .side-art {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.2;
+    object-fit: contain;
+  }
+
+  .side-art-left {
+    left: clamp(8px, 2vw, 24px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(110px, 16vw, 150px);
+  }
+
+  @include mobile {
+    .side-art-left {
+      width: clamp(76px, 22vw, 105px);
+      opacity: 0.14;
+    }
+  }
 }
 
 .intro {
@@ -142,7 +178,7 @@ const contactGroups = [
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   text-align: left;
-  margin: 0 1rem;
+  margin: 0 auto;
 
   h3 {
     margin-bottom: $spacing-md;

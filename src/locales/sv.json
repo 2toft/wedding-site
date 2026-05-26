@@ -71,7 +71,7 @@
     },
     "kids": {
       "kicker": "Barn",
-      "message": "Vi älskar era barn, men vi önskar att de stannar hemma under firandet. Ammande bebisar är självklart varmt välkomna."
+      "message": "Barn är underbara men denna dag väljer vi att fira i vuxet sällskap. Ammande bebisar är självklart varmt välkomna."
     }
   },
   "transportation": {
@@ -98,9 +98,9 @@
     "locationLabel": "Adress",
     "location": "Ödeshögsvägen 2, 592 40 Vadstena",
     "parkingLabel": "Parkering",
-    "parking": "Parkering finns direkt utanför hotellet.",
+    "parking": "Finns direkt utanför hotellet.",
     "checkInLabel": "Incheckning",
-    "checkIn": "Incheckning från 15:00.",
+    "checkIn": "från 15:00.",
     "frontDeskLabel": "Reception",
     "frontDesk": "0143 751 00",
     "openMaps": "Öppna karta",
