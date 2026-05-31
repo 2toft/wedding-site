@@ -15,7 +15,16 @@
       />
 
       <div class="hero-content">
-        <h1 class="names">{{ COUPLE_NAMES }}</h1>
+        <h1 class="names">
+          <span>Johan</span>
+          <img
+            class="names-heart"
+            src="/illustrations/heart_dark.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <span>Micaéla</span>
+        </h1>
         <p class="date text-meta">{{ $t("home.date") }}</p>
         <p class="welcome-msg text-body">
           {{ $t("home.welcome") }}
@@ -32,10 +41,6 @@
     </section>
   </div>
 </template>
-
-<script setup>
-import { COUPLE_NAMES } from "../config/site";
-</script>
 
 <style lang="scss" scoped>
 @use "../styles/variables" as *;
@@ -100,10 +105,24 @@ import { COUPLE_NAMES } from "../config/site";
     .names {
       font-size: clamp(2.25rem, 8vw, $font-size-display);
       margin-bottom: $spacing-xs;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(0.45rem, 1.4vw, 0.95rem);
       white-space: nowrap;
+
+      .names-heart {
+        width: clamp(2.2rem, 6vw, 4rem);
+        height: auto;
+        flex-shrink: 0;
+      }
 
       @include mobile {
         font-size: clamp(2rem, 9vw, $font-size-xxl);
+
+        .names-heart {
+          width: clamp(1.8rem, 7vw, 3rem);
+        }
       }
     }
 

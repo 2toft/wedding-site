@@ -191,7 +191,8 @@ const isDressCodeExpanded = ref(false);
     margin: 0 auto;
     margin-bottom: 0.35rem;
     font-size: $font-size-sm;
-    font-weight: bold;
+    font-weight: 700;
+    font-variation-settings: "wght" 700;
   }
 
   .segment-line {

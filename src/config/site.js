@@ -1,1 +1,1 @@
-export const COUPLE_NAMES = "Micaéla & Johan";
+export const COUPLE_NAMES = "Johan & Micaéla";

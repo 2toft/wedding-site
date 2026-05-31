@@ -71,7 +71,7 @@
     },
     "kids": {
       "kicker": "Children",
-      "message": "Children are wonderful, but on this day we choose to celebrate in adult company. Babies who are breastfeeding are, of course, warmly welcome."
+      "message": "Children are wonderful, but on this day we choose to celebrate in adult company."
     }
   },
   "transportation": {
@@ -113,7 +113,8 @@
     "intro": "We are so happy that you want to celebrate our big day with us.",
     "details": "Your presence is the greatest gift, but if you would like to give us something, a contribution to our honeymoon would mean a lot.",
     "button": "View gift list",
-    "listUrl": "https://example.com/gift-list"
+    "listUrl": "https://example.com/gift-list",
+    "listStatus": "The gift list is under construction."
   },
   "rsvp": {
     "title": "RSVP",

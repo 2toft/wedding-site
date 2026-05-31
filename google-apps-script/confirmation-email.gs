@@ -1,4 +1,4 @@
-const WEDDING_NAME = "Johan & Micaela";
+const WEDDING_NAME = "Johan & Micaéla";
 const RSVP_DEADLINE = "30 juni 2026";
 
 /**
@@ -49,6 +49,38 @@ function onFormSubmit(e) {
       ["friday", "dinner"],
     ]);
 
+  const dietaryRaw =
+    firstValue(namedValues, [
+      "Allergier / Specialkost",
+      "Dietary Restrictions / Allergies",
+      "Dietary Restrictions",
+      "Dietary",
+      "Kostinfo / Allergier",
+      "Kostinfo",
+      "Allergier",
+    ]) ||
+    firstValueByKeyFragments(namedValues, [
+      ["allerg"],
+      ["specialkost"],
+      ["dietary"],
+      ["kost"],
+    ]);
+
+  const alcoholRaw =
+    firstValue(namedValues, [
+      "Dryckesval",
+      "Drink Preference",
+      "Alcohol",
+      "Alkohol",
+      "Alcohol preference",
+    ]) ||
+    firstValueByKeyFragments(namedValues, [
+      ["dryck"],
+      ["drink"],
+      ["alkohol"],
+      ["alcohol"],
+    ]);
+
   const attending = normalizeYesNo(attendingRaw);
   const dayBefore = normalizeYesNo(dayBeforeFallbackRaw);
 
@@ -57,6 +89,8 @@ function onFormSubmit(e) {
     guestName,
     attending,
     dayBefore,
+    dietary: dietaryRaw,
+    alcohol: alcoholRaw,
   });
 
   MailApp.sendEmail({
@@ -66,30 +100,43 @@ function onFormSubmit(e) {
   });
 }
 
-function buildSwedishEmail({ guestName, attending, dayBefore }) {
+function buildSwedishEmail({
+  guestName,
+  attending,
+  dayBefore,
+  dietary,
+  alcohol,
+}) {
   const attendingLine =
     attending === "yes"
-      ? "Ni har angett att ni kommer p\u00e5 br\u00f6llopet."
+      ? "Du har angett att du kommer p\u00e5 br\u00f6llopet. Va kul!"
       : attending === "no"
-        ? "Ni har angett att ni tyv\u00e4rr inte kan komma p\u00e5 br\u00f6llopet."
-        : "Vi kunde inte tolka ert svar p\u00e5 fr\u00e5gan om deltagande.";
+        ? "Du har angett att du tyv\u00e4rr inte kan komma p\u00e5 br\u00f6llopet."
+        : "Vi kunde inte tolka ditt svar p\u00e5 fr\u00e5gan om deltagande.";
 
   const dayBeforeLine =
     dayBefore === "yes"
-      ? "Ni har anm\u00e4lt intresse f\u00f6r middagen dagen f\u00f6re (18 september)."
+      ? "Du har anm\u00e4lt intresse f\u00f6r middagen dagen f\u00f6re (18 september)."
       : dayBefore === "no"
-        ? "Ni har angett att ni inte deltar i middagen dagen f\u00f6re."
-        : "";
+        ? "Du har angett att du inte deltar i middagen dagen f\u00f6re."
+        : `${dayBefore}`;
+
+  const alcoholLine = `Val av dryck: ${toSwedishDrinkLabel(alcohol)}`;
+  const dietaryLine = dietary
+    ? `Allergier/specialkost: ${dietary}`
+    : "Allergier/specialkost: Inget angivet";
 
   return [
     `Hej ${guestName}!`,
     "",
-    "Tack f\u00f6r er OSA. Vi har tagit emot ert svar.",
+    "Vi har tagit emot ditt svar.",
     "",
     attendingLine,
     dayBeforeLine,
+    alcoholLine,
+    dietaryLine,
     "",
-    "Om n\u00e5got beh\u00f6ver \u00e4ndras, h\u00f6r av er till oss innan " +
+    "Om n\u00e5got beh\u00f6ver \u00e4ndras, h\u00f6r av dig till oss innan " +
       RSVP_DEADLINE +
       ".",
     "",
@@ -98,6 +145,26 @@ function buildSwedishEmail({ guestName, attending, dayBefore }) {
   ]
     .filter(Boolean)
     .join("\n");
+}
+
+function toSwedishDrinkLabel(value) {
+  if (!value) return "Inget angivet";
+
+  const normalized = normalizeText(value);
+
+  if (normalized === "alcohol" || normalized === "alkohol") {
+    return "Alkohol";
+  }
+
+  if (
+    normalized === "non-alcohol" ||
+    normalized === "non alcohol" ||
+    normalized === "alkoholfritt"
+  ) {
+    return "Alkoholfritt";
+  }
+
+  return value;
 }
 
 function firstValue(namedValues, keys) {
@@ -181,6 +248,8 @@ function testOnFormSubmit() {
       "Fullständigt namn": ["Testperson"],
       "Kommer du?": ["Ja"],
       "Vill du vara med?": ["Ja"],
+      Dryckesval: ["Alkohol"],
+      "Allergier / Specialkost": ["Laktosfri"],
     },
   };
 

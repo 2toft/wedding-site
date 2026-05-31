@@ -71,7 +71,7 @@
     },
     "kids": {
       "kicker": "Barn",
-      "message": "Barn är underbara men denna dag väljer vi att fira i vuxet sällskap. Ammande bebisar är självklart varmt välkomna."
+      "message": "Barn är underbara men denna dag väljer vi att fira i vuxet sällskap."
     }
   },
   "transportation": {
@@ -112,7 +112,8 @@
     "intro": "Vi är så glada att ni vill komma och fira vår stora dag med oss.",
     "details": "Er närvaro är den största gåvan, men om ni vill ge något får ni gärna bidra till vår bröllopsresa.",
     "button": "Se presentlista",
-    "listUrl": "https://example.com/gift-list"
+    "listUrl": "https://example.com/gift-list",
+    "listStatus": "Presentlistan är under uppbyggnad."
   },
   "rsvp": {
     "title": "OSA",

@@ -17,9 +17,13 @@
     <p class="intro text-body">{{ $t("gift.intro") }}</p>
     <p class="details text-body">{{ $t("gift.details") }}</p>
 
-    <a :href="$t('gift.listUrl')" target="_blank" rel="noopener" class="btn">
+    <p class="gift-list-status text-body">
+      {{ $t("gift.listStatus") }}
+    </p>
+
+    <button type="button" class="btn" disabled>
       {{ $t("gift.button") }}
-    </a>
+    </button>
   </div>
 </template>
 
@@ -73,5 +77,15 @@
 
 .btn {
   margin-top: $spacing-sm;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.gift-list-status {
+  margin: 0 auto $spacing-xs;
+  max-width: 56ch;
+  text-decoration: underline;
 }
 </style>
