@@ -14,7 +14,10 @@
       <div
         v-for="group in contactGroups"
         :key="group.titleKey"
-        class="contact-group"
+        :class="[
+          'contact-group',
+          { 'contact-group-couple': group.titleKey === 'contact.coupleTitle' },
+        ]"
       >
         <h3>{{ $t(group.titleKey) }}</h3>
 
@@ -31,6 +34,13 @@
               class="phone-link"
             >
               {{ $t("contact.phone") }}: {{ person.phoneDisplay }}
+            </a>
+            <a
+              v-else-if="person.emailHref"
+              :href="`mailto:${person.emailHref}`"
+              class="phone-link"
+            >
+              {{ $t("contact.email") }}: {{ person.emailDisplay }}
             </a>
             <p v-else-if="person.phoneDisplay" class="phone-text">
               {{ $t("contact.phone") }}: {{ person.phoneDisplay }}
@@ -50,6 +60,18 @@
             </ul>
           </div>
         </div>
+
+        <div
+          v-if="group.titleKey === 'contact.coupleTitle'"
+          class="couple-heart-wrap"
+        >
+          <img
+            class="couple-heart"
+            src="/illustrations/heart.svg"
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -57,6 +79,26 @@
 
 <script setup>
 const contactGroups = [
+  {
+    titleKey: "contact.toastmastersTitle",
+    people: [
+      {
+        nameKey: "contact.toastmasterEmail",
+        emailDisplay: "natoftsbrollop@gmail.com",
+        emailHref: "natoftsbrollop@gmail.com",
+      },
+      {
+        nameKey: "contact.toastmasterCalle",
+        phoneDisplay: "0739 53 53 82",
+        phoneHref: "0739535382",
+      },
+      {
+        nameKey: "contact.toastmasterSimon",
+        phoneDisplay: "0707 20 37 48",
+        phoneHref: "0707203748",
+      },
+    ],
+  },
   {
     titleKey: "contact.coupleTitle",
     people: [
@@ -69,21 +111,6 @@ const contactGroups = [
         nameKey: "contact.bride",
         phoneDisplay: "0730 93 39 94",
         phoneHref: "0730093394",
-      },
-    ],
-  },
-  {
-    titleKey: "contact.toastmastersTitle",
-    people: [
-      {
-        nameKey: "contact.toastmasterCalle",
-        phoneDisplay: "0739 53 53 82",
-        phoneHref: "0739535382",
-      },
-      {
-        nameKey: "contact.toastmasterSimon",
-        phoneDisplay: "0707 20 37 48",
-        phoneHref: "0707203748",
       },
     ],
   },
@@ -145,7 +172,7 @@ const contactGroups = [
 
   .side-art-left {
     left: clamp(8px, 2vw, 24px);
-    top: 50%;
+    top: 42%;
     transform: translateY(-50%);
     width: clamp(110px, 16vw, 150px);
   }
@@ -174,11 +201,14 @@ const contactGroups = [
 
 .contact-group {
   background: $color-dark-green;
+  width: 100%;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   text-align: left;
-  margin: 0 auto;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 
   h3 {
     margin-bottom: $spacing-md;
@@ -189,10 +219,30 @@ const contactGroups = [
 
 .contact-list {
   display: grid;
+  width: 100%;
   gap: $spacing-sm;
 }
 
+.couple-heart-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: $spacing-sm;
+}
+
+.contact-group-couple .couple-heart-wrap {
+  flex: 1;
+  align-items: center;
+}
+
+.couple-heart {
+  display: block;
+  width: clamp(38px, 6vw, 56px);
+  height: auto;
+}
+
 .contact-item {
+  width: 100%;
+  box-sizing: border-box;
   border-radius: 6px;
   padding: $spacing-sm;
   background: $color-light-green;

@@ -158,8 +158,9 @@
   },
   "contact": {
     "title": "Contact Us",
-    "intro": "If you have questions, please call one of us.",
+    "intro": "If you have questions for us or want to reach out to our amazing toastmasters, don't hesitate to call or email.",
     "phone": "Phone",
+    "email": "Email",
     "coupleTitle": "Bride & Groom",
     "toastmastersTitle": "Toastmasters",
     "servicesTitle": "Services",
@@ -167,6 +168,7 @@
     "bride": "Micaéla",
     "toastmasterCalle": "Calle",
     "toastmasterSimon": "Simon",
+    "toastmasterEmail": "Speeches & performances",
     "taxiService": "Taxi service",
     "markabTaxi": "Markab taxi",
     "mjolbyTaxi": "Mjölby taxis",

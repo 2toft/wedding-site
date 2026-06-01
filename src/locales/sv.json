@@ -157,8 +157,9 @@
   },
   "contact": {
     "title": "Kontakta oss",
-    "intro": "Om ni har frågor, ring gärna någon av oss.",
+    "intro": "Om ni har frågor till oss eller vill nå ut till våra fantastiska toastmasters, tveka inte att ringa eller maila.",
     "phone": "Telefon",
+    "email": "E-post",
     "coupleTitle": "Brudpar",
     "toastmastersTitle": "Toastmasters",
     "servicesTitle": "Tjänster",
@@ -166,6 +167,7 @@
     "bride": "Micaéla",
     "toastmasterCalle": "Calle",
     "toastmasterSimon": "Simon",
+    "toastmasterEmail": "Tal och uppträdanden",
     "taxiService": "Taxi",
     "markabTaxi": "Markab taxi",
     "mjolbyTaxi": "Mjölby taxis",
