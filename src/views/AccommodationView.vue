@@ -97,14 +97,13 @@ const accommodationInfo = {
 
   .side-art-right {
     right: clamp(8px, 2vw, 24px);
-    top: 18%;
+    top: 0%;
     width: clamp(82px, 12vw, 115px);
   }
 
   @include mobile {
     .side-art-right {
       width: clamp(62px, 18vw, 85px);
-      opacity: 0.15;
     }
   }
 }

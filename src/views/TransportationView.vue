@@ -53,16 +53,28 @@
 
   .side-art-right {
     right: clamp(12px, 3vw, 40px);
-    top: 50%;
+    top: 30%;
     transform: translateY(-50%);
     width: clamp(110px, 18vw, 170px);
   }
 
   @include mobile {
     .side-art {
-      opacity: 0.2;
       width: clamp(85px, 24vw, 120px);
+      left: -30%;
+      top: 8%;
+      animation: side-art-horizontal-sweep 10s linear infinite;
     }
+  }
+}
+
+@keyframes side-art-horizontal-sweep {
+  from {
+    left: -30%;
+  }
+
+  to {
+    left: 100%;
   }
 }
 

@@ -1,7 +1,7 @@
 <template>
   <div class="contact container section">
     <img
-      class="side-art side-art-left contact-art"
+      class="side-art side-art-right contact-art"
       src="/illustrations/cheers.svg"
       alt=""
       aria-hidden="true"
@@ -170,17 +170,15 @@ const contactGroups = [
     object-fit: contain;
   }
 
-  .side-art-left {
-    left: clamp(8px, 2vw, 24px);
-    top: 42%;
-    transform: translateY(-50%);
-    width: clamp(110px, 16vw, 150px);
+  .side-art-right {
+    right: 5%;
+    bottom: 15%;
   }
 
   @include mobile {
-    .side-art-left {
-      width: clamp(76px, 22vw, 105px);
-      opacity: 0.14;
+    .side-art-right {
+      top: 0.5%;
+      left: 5%;
     }
   }
 }

@@ -128,13 +128,13 @@ const isDressCodeExpanded = ref(false);
 
   .side-art-left {
     left: clamp(8px, 2vw, 24px);
-    top: 14%;
-    width: clamp(90px, 16vw, 140px);
+    top: 70%;
+    width: clamp(90px, 24vw, 300px);
   }
 
   .side-art-right {
     right: clamp(8px, 2vw, 24px);
-    top: 10%;
+    top: 0%;
     width: clamp(78px, 12vw, 110px);
   }
 

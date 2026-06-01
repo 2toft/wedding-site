@@ -2,13 +2,13 @@
   <div class="gift container section">
     <img
       class="side-art side-art-left heart-art"
-      src="/illustrations/heart.svg"
+      src="/illustrations/joyride_dark.svg"
       alt=""
       aria-hidden="true"
     />
     <img
       class="side-art side-art-right heart-art"
-      src="/illustrations/heart.svg"
+      src="/illustrations/heart_dark.svg"
       alt=""
       aria-hidden="true"
     />
@@ -32,7 +32,6 @@
 
 .gift {
   position: relative;
-  overflow: hidden;
   text-align: center;
   max-width: 760px;
   margin: 0 auto;
@@ -53,7 +52,8 @@
 
   .side-art-left {
     left: clamp(8px, 2vw, 24px);
-    top: 26%;
+    top: 65%;
+    width: clamp(104px, 18.2vw, 156px);
   }
 
   .side-art-right {
@@ -65,6 +65,10 @@
     .side-art {
       width: clamp(65px, 18vw, 95px);
       opacity: 0.2;
+    }
+
+    .side-art-left {
+      width: clamp(85px, 23.4vw, 124px);
     }
   }
 }

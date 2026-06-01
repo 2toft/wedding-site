@@ -2,7 +2,7 @@
   <div class="rsvp container section">
     <img
       class="side-art side-art-right rsvp-art"
-      src="/illustrations/joyride_dark.svg"
+      src="/illustrations/heart_dark.svg"
       alt=""
       aria-hidden="true"
     />
@@ -55,10 +55,10 @@ const handleSubmissionStateChange = (submitted) => {
   }
 
   .side-art-right {
-    right: clamp(8px, 2vw, 28px);
-    top: 46%;
+    right: 0%;
+    top: 16%;
     transform: translateY(-50%);
-    width: clamp(105px, 16vw, 150px);
+    width: 100px;
   }
 
   h2 {
