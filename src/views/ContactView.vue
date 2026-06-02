@@ -166,7 +166,7 @@ const contactGroups = [
     position: absolute;
     z-index: 1;
     pointer-events: none;
-    opacity: 0.2;
+    opacity: 0.1;
     object-fit: contain;
   }
 

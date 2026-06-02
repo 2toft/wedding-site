@@ -52,7 +52,7 @@
 
   .side-art-left {
     left: clamp(8px, 2vw, 24px);
-    top: 65%;
+    top: 71%;
     width: clamp(104px, 18.2vw, 156px);
   }
 
@@ -63,12 +63,12 @@
 
   @include mobile {
     .side-art {
-      width: clamp(65px, 18vw, 95px);
+      width: clamp(49px, 13.5vw, 71px);
       opacity: 0.2;
     }
 
     .side-art-left {
-      width: clamp(85px, 23.4vw, 124px);
+      width: clamp(64px, 17.55vw, 93px);
     }
   }
 }
