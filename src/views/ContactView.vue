@@ -103,14 +103,14 @@ const contactGroups = [
     titleKey: "contact.coupleTitle",
     people: [
       {
-        nameKey: "contact.groom",
-        phoneDisplay: "0707 661 443",
-        phoneHref: "0707661443",
-      },
-      {
         nameKey: "contact.bride",
         phoneDisplay: "0730 93 39 94",
         phoneHref: "0730093394",
+      },
+      {
+        nameKey: "contact.groom",
+        phoneDisplay: "0707 661 443",
+        phoneHref: "0707661443",
       },
     ],
   },
