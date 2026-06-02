@@ -52,7 +52,7 @@
 
   .side-art-left {
     left: clamp(8px, 2vw, 24px);
-    top: 71%;
+    top: 73%;
     width: clamp(104px, 18.2vw, 156px);
   }
 
