@@ -134,7 +134,7 @@
     "guests": "Number of Guests",
     "guestDetailsTitle": "Guest Information",
     "guestCardTitle": "Guest {number}",
-    "guestName": "Name",
+    "guestName": "First and Last Name",
     "guestNamePlaceholder": "Enter name",
     "guestInfo": "Dietary Notes / Allergies",
     "guestInfoPlaceholder": "Any dietary needs or allergies?",
