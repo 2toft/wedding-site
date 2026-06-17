@@ -78,8 +78,9 @@
           <p class="toastmaster-note text-body">
             {{ $t("rsvp.toastmasterNoteBefore") }}
             <a href="/contact" target="_blank" rel="noopener">
-              {{ $t("nav.contact") }}
-            </a>
+              {{ $t("nav.contact") }} </a
+            >.
+            <br />
             {{ $t("rsvp.toastmasterNoteAfter") }}
           </p>
 
