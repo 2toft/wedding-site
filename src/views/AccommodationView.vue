@@ -60,6 +60,9 @@
       <p class="promo-note text-body">
         {{ $t("accommodation.promoCodeNote") }}
       </p>
+      <p class="promo-note text-body">
+        {{ $t("accommodation.bookingReferenceNote") }}
+      </p>
     </div>
   </div>
 </template>

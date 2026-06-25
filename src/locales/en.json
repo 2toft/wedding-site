@@ -106,7 +106,8 @@
     "frontDeskPhoneRef": "014375100",
     "openMaps": "Open map",
     "bookRooms": "Book rooms",
-    "promoCodeNote": "The promo code \"Bröllop2026\" is already included in the booking link."
+    "promoCodeNote": "The promo code \"Bröllop2026\" is already included in the booking link.",
+    "bookingReferenceNote": "Please mark your booking with \"Micaéla och Johans bröllop\"."
   },
   "gift": {
     "title": "Gifts",

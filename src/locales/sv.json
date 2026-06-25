@@ -105,7 +105,8 @@
     "frontDesk": "0143 751 00",
     "openMaps": "Öppna karta",
     "bookRooms": "Boka rum",
-    "promoCodeNote": "Rabattkoden \"Bröllop2026\" ingår redan i bokningslänken."
+    "promoCodeNote": "Rabattkoden \"Bröllop2026\" ingår redan i bokningslänken.",
+    "bookingReferenceNote": "Markera er bokning med \"Micaéla och Johans bröllop\"."
   },
   "gift": {
     "title": "Gåvor",
