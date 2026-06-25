@@ -15,7 +15,6 @@
         <h3>{{ $t("transportation.toCeremony.title") }}</h3>
         <p class="text-body">{{ $t("transportation.toCeremony.route") }}</p>
         <p class="time">{{ $t("transportation.toCeremony.departure") }}</p>
-        <p class="time">{{ $t("transportation.toCeremony.arrival") }}</p>
       </article>
 
       <article class="schedule-card">

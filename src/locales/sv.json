@@ -80,8 +80,7 @@
     "toCeremony": {
       "title": "Till vigseln",
       "route": "Starby Hotell till Högby kyrka",
-      "departure": "Avgång: 13:15",
-      "arrival": "Ankomst: 13:40"
+      "departure": "Avgång: 13:15"
     },
     "toHotel": {
       "title": "Tillbaka till hotellet",

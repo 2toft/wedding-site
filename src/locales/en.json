@@ -80,8 +80,7 @@
     "toCeremony": {
       "title": "To the Ceremony",
       "route": "Starby Hotel to Högby Church",
-      "departure": "Departure: 13:15",
-      "arrival": "Arrival: 13:40"
+      "departure": "Departure: 13:15"
     },
     "toHotel": {
       "title": "Back to the Hotel",
