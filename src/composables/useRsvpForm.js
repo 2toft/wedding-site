@@ -27,24 +27,26 @@ export function useRsvpForm() {
 
       const attendingValue = formData.attending ? "Yes" : "No"; // Adjust based on your Google Form options
 
-      const dietaryValue =
-        (formData.dietary && String(formData.dietary).trim()) ||
-        (primaryGuest.info && String(primaryGuest.info).trim()) ||
-        "None";
+      const dietaryValue = formData.attending
+        ? (formData.dietary && String(formData.dietary).trim()) ||
+          (primaryGuest.info && String(primaryGuest.info).trim()) ||
+          "None"
+        : "";
 
-      const alcoholValue =
-        primaryGuest.drinkPreference === "alcohol"
+      const alcoholValue = formData.attending
+        ? primaryGuest.drinkPreference === "alcohol"
           ? "Alcohol"
           : primaryGuest.drinkPreference === "nonAlcohol"
             ? "Non-alcohol"
-            : "Not specified";
+            : ""
+        : "";
 
       const fridayDinnerValue =
         formData.attending && formData.dayBeforeDinner !== null
           ? formData.dayBeforeDinner
             ? "Yes"
             : "No"
-          : "Not specified";
+          : "";
 
       const submissionByField = {
         email: formData.email || "",
