@@ -112,8 +112,9 @@
     "intro": "Vi är så glada att ni vill komma och fira vår stora dag med oss.",
     "details": "Er närvaro är den största gåvan, men om ni vill ge något får ni gärna bidra till vår bröllopsresa.",
     "button": "Se presentlista",
-    "listUrl": "https://example.com/gift-list",
-    "listStatus": "Presentlistan är under uppbyggnad."
+    "listUrl": "https://www.myweddingsolution.com/sv/natoftsbrollop",
+    "listInfo2": "För att behålla spänningen fram till bröllopsdagen så samlas alla bidrag in av Johans pappa Göran, som överlämnar dem till oss först efter bröllopet.",
+    "listInfo3": "När ni lämnar ert bidrag får ni gärna skriva en hälsning. Skriv också vad ni bidrar till, så att det kan sammanställas och delas med oss."
   },
   "rsvp": {
     "title": "OSA",
